@@ -1,0 +1,33 @@
+#productCards {
+    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+#productCards .card {
+    margin: 10px;
+    img {
+        height: 300px;
+        object-fit: contain;
+        padding: 10px;
+    }
+
+    .card-category {
+        font-size: 15px;
+        font-weight: 500;
+        color: gray;
+    }
+
+    span {
+        background-color: #165057;
+        outline: none;
+        border: none;
+        color: white;
+    }
+
+    span:hover {
+        background-color: #1d6871;
+    }
+}

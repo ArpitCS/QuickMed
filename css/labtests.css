@@ -1,0 +1,101 @@
+body {
+    overflow-x: hidden;
+}
+
+#tests {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.testCard {
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 !important;
+
+    .top {
+        background-color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+
+        .card-title {
+            font-weight: 800;
+        }
+
+        .card-tests {
+            background-color: #f3bd8a;
+            padding: 4px;
+            width: 30%;
+            border-radius: 25px;
+            text-align: center;
+        }
+    }
+    
+    .bottom {
+        background-color: #165057;
+        color: white;
+        font-weight: 600;
+        width: 100%;
+        padding: 10px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        #bookBtn {
+            background-color: #2b97a4;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        #bookBtn:hover {
+            background-color: #5dbdc7;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+      flex: 0 0 auto;
+      width: 30%;
+    }
+  }
+
+#testModalBody #clientDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    .formGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    input, textarea {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    #clientAddress {
+        grid-column: 1 / 3;
+    }
+}
+
