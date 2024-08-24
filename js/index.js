@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     searchButton.addEventListener("click", function () {
       const query = searchBar.value;
       const currentUrl = window.location.href;
-      window.location.href = currentUrl.includes("html")
-        ? `store.html?search=${query}`
-        : `../html/store.html?search=${query}`;
+      window.location.pathname = currentUrl.includes("html")
+        ? `/QuickMed/html/store.html?search=${query}`
+        : `/QuickMed/store.html?search=${query}`;
     });
   
     updateCartAmount();
