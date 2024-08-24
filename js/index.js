@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     searchButton.addEventListener("click", function () {
       const query = searchBar.value;
       const currentUrl = window.location.href;
-      window.location.pathname = currentUrl.includes("html")
+      window.location.href = currentUrl.includes("html")
         ? `/QuickMed/html/store.html?search=${query}`
         : `/QuickMed/store.html?search=${query}`;
     });
