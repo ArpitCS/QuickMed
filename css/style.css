@@ -160,9 +160,8 @@ header {
 
 .exploreCard {
   background-color: #d3d3ef;
-  width: 20%;
   text-align: center;
-  padding: 40px 0px;
+  padding: 40px;
   border-radius: 10px;
 }
 
@@ -349,11 +348,14 @@ footer {
     align-items: center;
 
     #about {
-      width: 80%;
+      width: 90%;
     }
     #howto {
-      width: 80%;
+      width: 90%;
     }
+  }
+  #exploreCards {
+    display: none;
   }
   footer {
     #top {
@@ -362,9 +364,16 @@ footer {
       align-items: center;
 
       #about {
-        width: 80%;
+        width: 90%;
       }
     }
+  }
+  #banner {
+    margin: 0px;
+    padding: 0px
+  }
+  #banner img {
+    border-radius: 0px;
   }
 }
 
