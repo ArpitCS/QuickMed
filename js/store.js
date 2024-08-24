@@ -149,7 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
     filterResults(query);
   });
 
-  let searchQuery = new URLSearchParams(window.location.search).get("search");
+  let tempURL = (window.location.href).replace("%3F", "?");
+  let searchQuery = new URLSearchParams(tempURL).get("search");
   if (searchQuery) {
     searchInput.value = searchQuery;
     filterResults(searchQuery);
