@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/arpitcs/quickmed">
-    <img src="assets/logo-full.png" alt="Logo" height="80" style="color:#2b97a4;">
+    <img src="assets/logo-color.png" alt="Logo" height="80" style="color:#2b97a4;">
   </a>
 
   <h3 align="center">Front-End Development Project</h3>
