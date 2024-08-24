@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/arpitcs/quickmed">
-    <img src="assets/logo-full.png" alt="Logo" height="80" style="color:black;">
+    <img src="assets/logo-full.png" alt="Logo" height="80" style="color:#2b97a4;">
   </a>
 
   <h3 align="center">Front-End Development Project</h3>
@@ -30,11 +30,7 @@
     </li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#purpose">Purpose</a></li>
   </ol>
 </details>
 
@@ -115,6 +111,7 @@ This Project was Submitted in Partial Fulfillment of the Requirement for the Awa
     <li><a href="github.com/aryan1628be28">Aryan</a></li>
 </ul>
 
+<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
