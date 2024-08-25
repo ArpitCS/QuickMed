@@ -64,7 +64,7 @@ This is the Technical Stack used to Make this Project <br />
 [![JavaScript][javascript.com]][JavaScript-url] <br />
 [![Bootstrap][Bootstrap.com]][Bootstrap-url] <br />
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
 
 
@@ -105,10 +105,10 @@ To get a local copy up and running follow these simple example steps.
 ## Purpose
 This Project was Submitted in Partial Fulfillment of the Requirement for the Award of Bachelors of Engineering (B.E.) Degree in Computer Science (C.S.) @ Chitkara University, Punjab (INDIA) By,
 <ul>
-    <li><a href="github.com/ArpitCS">Arpit Garg</a></li>
-    <li><a href="github.com/anirudhbecse">Anirudh Chaudhary</a></li>
-    <li><a href="github.com/abhishek20k5">Abhishek Kumar</a></li>
-    <li><a href="github.com/aryan1628be28">Aryan</a></li>
+    <li><a href="https://www.github.com/ArpitCS">Arpit Garg</a></li>
+    <li><a href="https://www.github.com/anirudhbecse">Anirudh Chaudhary</a></li>
+    <li><a href="https://www.github.com/abhishek20k5">Abhishek Kumar</a></li>
+    <li><a href="https://www.github.com/aryan1628be28">Aryan</a></li>
 </ul>
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
