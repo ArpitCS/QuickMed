@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <img src="${item.image}" alt="${item.name}">
                         <span>${item.name}</span>
                     </div>
-                    <span  class="col-md-3">Rs. ${item.price}</span>
+                    <span class="col-md-3 cardPrice">Rs. ${item.price}</span>
                     <button class="btn btn-danger btn-sm" onclick="removeFromCart(${item.id})">Remove</button>
             `;
       cartItemsContainer.appendChild(cartItemElement);
