@@ -94,6 +94,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const productsContainer = document.getElementById("productCards");
 
+  const cartAmountElement = document.getElementById("cart-amount");
+  function updateCartAmount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let totalAmount = cart.reduce((total, item) => total + item.price, 0);
+    cartAmountElement.textContent = `${totalAmount}`;
+  }
+
   function loadProducts(productsToLoad) {
     productsContainer.className = "row";
     let htmlContent = "";
@@ -149,8 +156,11 @@ document.addEventListener("DOMContentLoaded", function () {
     filterResults(query);
   });
 
-  let tempURL = (window.location.href).replace("%3F", "?");
-  let searchQuery = new URLSearchParams(tempURL).get("search");
+
+  let tempURL = new URLSearchParams(window.location.search).get("search");
+  let searchURL = decodeURIComponent(tempURL);
+  const searchQuery = searchURL;
+  console.log(searchQuery);
   if (searchQuery) {
     searchInput.value = searchQuery;
     filterResults(searchQuery);

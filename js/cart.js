@@ -1,7 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cartItemsContainer = document.getElementById("cartItems");
   const totalPriceElement = document.getElementById("totalPrice");
-//   const cartAmountElement = document.getElementById("cart-amount");
+  //   const cartAmountElement = document.getElementById("cart-amount");
+
+  const productsContainer = document.getElementById("productCards");
+
+  const cartAmountElement = document.getElementById("cart-amount");
+  function updateCartAmount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let totalAmount = cart.reduce((total, item) => total + item.price, 0);
+    cartAmountElement.textContent = `${totalAmount}`;
+  }
 
   function loadCart() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -51,6 +60,15 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCart(cart);
 
     alert("Item removed from cart");
+    updateCartAmount();
+  }
+
+  const clearButton = document.getElementById("clearBtn");
+  clearButton.addEventListener("click", clearCart);
+
+  function clearCart() {
+    localStorage.removeItem("cart");
+    updateCart([]);
     updateCartAmount();
   }
 

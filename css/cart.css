@@ -20,8 +20,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #eeeeee;
-    padding: 10px;
+    background-color: #f1f5f9;
+    border-radius: 20px;
+    padding: 10px 20px;
     color: black;
     width: 90%;
 
