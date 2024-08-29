@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let searchURL = decodeURIComponent(tempURL);
   const searchQuery = searchURL;
   console.log(searchQuery);
-  if (!(searchQuery == null)) {
+  if (searchQuery) {
     searchInput.value = searchQuery;
     filterResults(searchQuery);
   } else {
