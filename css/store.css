@@ -7,11 +7,14 @@
 }
 
 #productCards .card {
+    border-radius: 20px;
     margin: 10px;
     img {
         height: 300px;
         object-fit: contain;
         padding: 10px;
+        background-color: #f1f5f9;
+        border-radius: 20px;
     }
 
     .card-category {
@@ -21,13 +24,20 @@
     }
 
     span {
-        background-color: #165057;
+        background-color: white;
+        /* background-color: #165057; */
         outline: none;
-        border: none;
-        color: white;
+        border: 2px solid #165057;
+        color: #165057;
+        border-radius: 25px;
     }
 
     span:hover {
-        background-color: #1d6871;
+        background-color: #165057;
+        color: white;
+    }
+
+    .card-price {
+        font-weight: bold;
     }
 }

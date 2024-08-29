@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           <p class="card-brand">by ${product.brand}</p>
                           <p class="card-text">${product.description}</p>
                           <p class="card-price">Rs. ${product.price}</p>
-                          <span class="btn" onclick="addToCart(${product.id})">Add to cart</span>
+                          <span class="btn" onclick="addToCart(${product.id})">+ Add to cart</span>
                       </div>
                   </div>
               </div>

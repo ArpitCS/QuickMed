@@ -144,25 +144,108 @@ header {
 #banner {
   margin: 20px;
 
-  img {
-    border-radius: 10px;
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: #2b97a4;
+    padding: 10px;
+    border-radius: 100%;
   }
 }
 
-#exploreCards {
-  width: 100%;
+#subBanner {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
   padding: 0px 100px;
+  gap: 50px;
+  margin: 10px 0px;
 }
 
-.exploreCard {
-  background-color: #d3d3ef;
-  text-align: center;
-  padding: 40px;
-  border-radius: 10px;
+@media screen and (max-width: 768px) {
+  #subBanner {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 20px;
+
+    #prescription {
+      width: 100%;
+      height: 400px;
+    }
+    #consultCard {
+      width: 100%;
+    }
+  } 
+}
+
+#prescription {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #f6e88f;
+  padding: 0px 40px;
+  width: 50%;
+  border-radius: 20px;
+  height: 350px;
+  
+  #dropbox {
+    background-color: #f1f5f9;
+    padding: 20px 40px;
+    border-radius: 20px;
+    border: 2px dashed #3a341c;
+  }
+  
+  button {
+    padding: 10px;
+    outline: none;
+    border: 3px solid #3a341c;
+    color: #3a341c;
+    background-color: white;
+    border-radius: 25px;
+  }
+  
+  button:hover {
+    color: white;
+    background-color: #3a341c;
+    cursor: pointer;
+  }
+}
+
+#consultCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 350px;
+  padding: 0px 40px;
+  width: 50%;
+  background-color: #fec091;
+  border-radius: 20px;
+  color: #260b2f;
+
+  h4 {
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  button {
+    padding: 10px;
+    outline: none;
+    border: 3px solid #260b2f;
+    color: #260b2f;
+    background-color: white;
+    border-radius: 25px;
+  }
+
+  button:hover {
+    color: white;
+    background-color: #260b2f;
+    cursor: pointer;
+  }
 }
 
 #content {

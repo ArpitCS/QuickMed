@@ -27,11 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
     consultButton.addEventListener("click", function () {
       consultModal.toggle();
     });
-
+    
     const closeButton = document.getElementById('closeBtn');
-
+    
     closeButton.addEventListener('click', function() {
-        consultModal.toggle();
+      consultModal.toggle();
     });
-
+    
+    const consultButton2 = document.getElementById("consultBtn2");
+    consultButton2.addEventListener("click", function () {
+      consultModal.toggle();
+    });
   });
