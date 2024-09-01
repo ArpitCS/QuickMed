@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 "Encourage the person to cough.",
                 "If the person is unable to cough, speak or breathe, give up to 5 back blows.",
                 "If back blows do not dislodge the object, give up to 5 abdominal thrusts.",
-                "If the person is still choking, call 999 or 112.",
+                "If the person is still choking, call 108 for Ambulance.",
             ],
             img: "../images/choking.jpg"
         },
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "CPR",
             steps: [
                 "Check for response.",
-                "Call 999 or 112.",
+                "Call 108 for Ambulance.",
                 "Give 30 chest compressions.",
                 "Give 2 rescue breaths.",
                 "Continue with cycles of 30 chest compressions and 2 rescue breaths until emergency help arrives.",
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Stroke",
             steps: [
                 "Check for signs of a stroke.",
-                "Call 999 or 112.",
+                "Call 108 for Ambulance.",
                 "Help the person to sit down and keep them calm.",
                 "If the person is conscious, reassure them.",
                 "Do not give them anything to eat or drink.",
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 6,
             title: "Heart Attack",
             steps: [
-                "Call 999 or 112.",
+                "Call 108 for Ambulance.",
                 "Help the person to sit down and keep them calm.",
                 "If the person is conscious, reassure them.",
                 "If the person is not allergic to aspirin, give them one tablet to chew slowly.",
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Bleeding",
             steps: [
                 "Put pressure on the wound with whatever is available to stop or slow down the flow of blood.",
-                "If the bleeding is severe, call 999 or 112.",
+                "If the bleeding is severe, call 108 for Ambulance.",
                 "Keep pressure on the wound until help arrives.",
                 "If the bleeding is severe, raise the injured limb above the level of the heart.",
             ],
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Head Injury",
             steps: [
                 "Check for signs of a serious head injury.",
-                "Call 999 or 112.",
+                "Call 108 for Ambulance.",
                 "Help the person to sit down and keep them calm.",
                 "If the person is conscious, reassure them.",
                 "Do not give them anything to eat or drink.",
