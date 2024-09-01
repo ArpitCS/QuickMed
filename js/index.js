@@ -6,18 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let totalAmount = cart.reduce((total, item) => total + item.price, 0);
       cartAmountElement.textContent = `${totalAmount}`;
     }
-  
-    const searchBar = document.getElementById("searchInput");
-    const searchButton = document.getElementById("searchButton");
-  
-    searchButton.addEventListener("click", function () {
-      const query = searchBar.value;
-      const currentUrl = window.location.href;
-      window.location.href = currentUrl.includes("html")
-        ? `html/store.html?search=${query}`
-        : `store.html?search=${query}`;
-    });
-  
+
     updateCartAmount();
   
     const consultButton = document.getElementById("consultBtn");
