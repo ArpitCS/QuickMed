@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="card-category">${product.categories.join(", ")}</div>              
                     <div class="card-title">${product.name}</div>
                     <div class="brand">by ${product.brand}</div>
-                    <p class="card-description">
+                    <p class="card-description" onclick="viewProduct(${product.id})">
                         ${shortDesc}...
                     </p>
                     <div class="card-price">Rs. ${product.price}</div>
@@ -158,30 +158,51 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCartAmount();
   };
 
+  const mainContainer = document.getElementById("main");
+
+  window.viewProduct = function (productId) {
+    const product  = products.find((p) => p.id === productId);
+    if (!product) return;
+
+    const productViewContent = `
+      <div id="product" class="row">
+            <span class="backbtn"><a href="store.html"><i class="fa-solid fa-backward"></i></a></span>
+            <div class="col-md-4 col-sm-12">
+                <img src="${product.image}" alt="${product.name}">
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h2>${product.name}</h2>
+                <a href="store.html">Visit QuickMED Store</a>
+                <h3>Rs. ${product.price}</h3>
+                <p class="taxinc">Inclusive of all Taxes</p>
+
+                <h4>Description</h4 >
+                <p>${product.description}</p>
+            </div>
+            <div class="col-md-4 buttons-container col-sm-12"> 
+                <button class="product-cart" onclick="addToCart(${productId})">Add to Cart</button>
+                <a href="cart.html" class="view-cart"><span>View Cart ></span></a>
+            </div>
+        </div>
+    `;
+
+    mainContainer.innerHTML = productViewContent;
+  }
+
+
   const searchInput = document.getElementById("searchInput");
   searchInput.addEventListener("input", function () {
     const query = searchInput.value;
     filterResults(query);
   });
 
-  let tempURL = new URLSearchParams(window.location.search).get("search");
-  let searchURL = decodeURIComponent(tempURL);
-  const searchQuery = searchURL;
-  console.log(searchQuery);
-  if (searchQuery) {
-    searchInput.value = searchQuery;
-    filterResults(searchQuery);
-  } else {
-    loadProducts(products);
-  }
-
   loadProducts(products);
   updateCartAmount();
+  
+  function getWords(str, numWords) {
+    const words = str.split(/\s+/);
+    const selectedWords = words.slice(0, numWords);
+    return selectedWords.join(' ');
+  }
 });
 
-
-function getWords(str, numWords) {
-  const words = str.split(/\s+/);
-  const selectedWords = words.slice(0, numWords);
-  return selectedWords.join(' ');
-}
