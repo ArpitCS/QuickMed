@@ -1,8 +1,15 @@
+#main {
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+}
+
 #productCards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin: 20px;
+    width: 75%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -90,6 +97,13 @@
     }
 }
 
+.card:hover {
+    .card-img {
+        scale: 1.05;
+        transition: all 0.05s;
+    }
+}
+
 #product {
     margin: 0px 50px;
 
@@ -159,6 +173,89 @@
                 background-color: #5e949a;
                 color: #fff;
             }
+        }
+    }
+}
+
+#body-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 50px;
+
+    select {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+}
+
+#sidebar {
+    width: 25%;
+    margin: 20px 0px;
+    padding: 0px 25px;
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: column;
+
+    ul {
+        list-style-type: none;
+        li {
+            margin: 10px 0;
+            font-size: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+#category-filter {
+    .category {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin: 5px 0;
+        cursor: pointer;
+
+        .category-name {
+            font-size: 1rem;
+        }
+    }
+}
+
+#price-filter {
+
+    input {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 25px;
+    }
+
+    #price-range {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+}
+
+#brand-filter {
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin: 5px 0;
+        cursor: pointer;
+
+        .brand-name {
+            font-size: 1rem;
         }
     }
 }

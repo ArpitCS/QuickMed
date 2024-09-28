@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description:
         "Dolo 650 tablet is used to treat pain, fever, headaches, toothaches, migraines, body aches, and fever. It contains paracetamol, which inhibits the formation of certain chemicals that cause pain and fever in the body. Side effects of Dolo 650 are rare.",
       categories: ["General", "Paracetamol"],
-      image: "../images/dolo650.webp",
+      image: "../images/dolo650.png",
     },
     {
       id: 4,
@@ -159,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const mainContainer = document.getElementById("main");
+  const bodyHeader = document.getElementById("body-header");
 
   window.viewProduct = function (productId) {
     const product  = products.find((p) => p.id === productId);
@@ -186,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     `;
 
+    bodyHeader.style.display = "none";
     mainContainer.innerHTML = productViewContent;
   }
 
