@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const cartItemsContainer = document.getElementById("cartItems");
+  const cartItemsContainer = document.getElementById("cart-items");
   const totalPriceElement = document.getElementById("totalPrice");
   //   const cartAmountElement = document.getElementById("cart-amount");
 
@@ -37,20 +37,41 @@ document.addEventListener("DOMContentLoaded", function () {
         item.image = "../assets/testsIcon.png";
       }
       const cartItemElement = document.createElement("div");
-      cartItemElement.className = "cartCard row";
+      cartItemElement.className = "cart-item col-12";
       cartItemElement.innerHTML = `
-                    <div class="cardTitle col-md-3 justify-content-start">
-                        <img src="${item.image}" alt="${item.name}">
-                        <span>${item.name}</span>
-                    </div>
-                    <span class="col-md-3 cardPrice">Rs. ${item.price}</span>
-                    <button class="btn btn-danger btn-sm" onclick="removeFromCart(${item.id})">Remove</button>
+              <div class="cart-remove">
+                <button onclick="removeFromCart(${item.id})" class="remove-btn">
+                  <i class="fa-solid fa-close"></i>
+                </button>
+              </div>
+              <div class="cart-title">
+                <img src="${item.image}" alt="${item.name}" />
+                <div>
+                    <p>${item.name}</p>
+                </div>
+              </div>
+              <div class="cart-price">
+                <p class="tag">Price: </p>
+                <p>Rs.100</p>
+              </div>
+              <div class="cart-quantity">
+                <p class="tag">Quantity: </p>
+                <div>
+                  <button onclick="decrementQty(1)" class="btn">-</button>
+                  <p>1</p>
+                  <button onclick="incrementQty(1)" class="btn">+</button>
+                </div>
+              </div>
+              <div class="cart-net-price">
+                <p class="tag">Net Price: </p>
+                <p>Rs.100</p>
+              </div>
             `;
       cartItemsContainer.appendChild(cartItemElement);
       total += item.price;
     });
 
-    totalPriceElement.textContent = `Total: Rs.${total}`;
+    totalPriceElement.textContent = `Rs.${total}`;
   }
 
   function removeFromCart(productId) {
