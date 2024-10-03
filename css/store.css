@@ -25,7 +25,6 @@
 }
 
 .card {
-    border: 2px solid #165057;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);

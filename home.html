@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMed</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <div id="logo">
+                <a href="index.html">
+                    <img src="assets/logo-full.png" alt="QuickMed Logo">
+                </a>
+            </div>
+            <div id="searchbar">
+                <input type="text" placeholder="Search products" id="searchInput">
+                <span id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+            <div id="right-header">
+                <div id="cart">
+                    <a href="html/cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <div id="amount">
+                        <i class="fa-solid fa-rupee-sign">:</i>
+                        <div id="cart-amount">XX,XXX</div>
+                    </div>
+                </div>
+                <div id="profile">
+                    <a href="html/login.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="navbar">
+            <div id="navlinks">
+                <div class="nav-item">
+                    <span><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></span>
+                </div>
+                <div class="nav-item">
+                    <span><a href="html/store.html"><i class="fa-solid fa-store"></i>Store</a></span>
+                </div>
+                <div class="nav-item">
+                    <span><a href="html/labtests.html"><i class="fa-solid fa-syringe"></i>Tests</a></span>
+                </div>
+                <div class="nav-item">
+                    <span><a href="html/firstaid.html"><i class="fa-solid fa-suitcase-medical"></i>First-Aid</a></span>
+                </div>
+                <div class="nav-item">
+                    <span><a href="html/blogs.html"><i class="fa-solid fa-blog"></i>Blogs</a></span>
+                </div>
+            </div>
+            <div id="consult" class="nav-item">
+                <span id="consultBtn"><i class="fa-solid fa-phone"></i>Consult</span>
+            </div>
+        </div>
+    </header>
+
+    <div id="main">
+        <div id="banner">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/carousel/1.png" class="d-block w-100" alt="Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel/2.png" class="d-block w-100" alt="Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel/3.png" class="d-block w-100" alt="Image 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel/4.png" class="d-block w-100" alt="Image 4">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="subBanner">
+            <div id="prescription">
+              <div id="dropbox">
+                 <h4>Order Using Prescription</h4>
+                 <p>Files Supported: .jpg, .png, .pdf</p>
+                 <p>Size Limit is 15MB</p>
+                 <input type="file" accept=".jpg, .png,.pdf" id="fileID">
+              </div>
+              <div>
+                <button class="btn">Order Now</button>
+              </div>
+            </div>
+            <div id="consultCard">
+                <h4>Don't have a Prescription?</h4>
+                <p>Book an appointment with our doctors for a consultation.</p>
+                <button id="consultBtn2">Consult Now</button>
+            </div>
+          </div>
+
+        <div id="content">
+            <div id="about">
+                <h2>About Us</h2>
+                <p>“QuickMed” is a Pharmacy/Medical website. This website enables the user to access various different medical services. This includes, whether the user wants to place an order for the medicines prescribed by a doctor or browse for latest blogs and articles related to the medicine industry. We aim to provide a user-friendly interface that allows easy access to different services.</p>
+            </div>
+            <div id="howto">
+                <h3>How To Order</h3>
+                <div class="step">
+                    <span>1</span>
+                    <p>Choose Medicines from Store</p>
+                </div>
+                <div class="step">
+                    <span>2</span>
+                    <p>Upload Doctor's Precription</p>
+                </div>
+                <div class="step">
+                    <span>3</span>
+                    <p>Checkout to Payment Portal</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="orderby">
+        <div id="concern">
+            <h4>ORDER by HEALTH CONCERN</h4>
+            <div class="itemCards">
+                <div class="itemCard">
+                    <a href="#"><img src="assets/concerns/diabetes.jpg" alt=""></a>
+                    <p>Diabetes</p>
+                </div>
+                <div class="itemCard">
+                    <a href="#"><img src="assets/concerns/heartcare.jpg" alt=""></a>
+                    <p>Heart Care</p>
+                </div>
+                <div class="itemCard">
+                    <a href="#"><img src="assets/concerns/bones.jpeg" alt=""></a>
+                    <p>Bone, Joint & Muscle Care</p>
+                </div>
+                <div class="itemCard">
+                    <a href="#"><img src="assets/concerns/kidney.jpg" alt=""></a>
+                    <p>Kidney Care</p>
+                </div>
+                <div class="itemCard">
+                    <a href="#"><img src="assets/concerns/derma.jpg" alt=""></a>
+                    <p>Derma Care</p>
+                </div>
+            </div>
+        </div>
+        <div id="brand">
+            <h4>ORDER by BRANDS</h4>
+            <div class="itemCards">
+                <div class="itemCard">
+                    <a href="#"><img src="assets/brands/himalaya.webp" alt=""></a>
+                </div>
+                <div class="itemCard">
+                    <a href="#"><img src="assets/brands/aimil.webp" alt=""></a>
+                </div>
+                <div class="itemCard">
+                    <a href="#"><img src="assets/brands/avp.webp" alt=""></a>
+                </div>
+                <div class="itemCard">
+                    <a href="#"><img src="assets/brands/dabur.webp" alt=""></a>
+                </div>
+                <div class="itemCard">
+                    <a href="#"><img src="assets/brands/morepen.webp" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="newsletter">
+        <span>Subscribe to Get Weekly newsletter: </span>
+        <input type="text" placeholder="Enter E-Mail Here">
+        <button>Submit</button>
+    </div>
+
+    <footer>
+        <div id="top">
+            <div class="footeritem" id="about">
+                <p class="footerheading">QuickMed</p>
+                <p>“QuickMed” is a Pharmacy/Medical website. This website enables the user to access various different medical services. This includes, whether the user wants to place an order for the medicines prescribed by a doctor or browse for latest blogs and articles related to the medicine industry. We aim to provide a user-friendly interface that allows easy access to different services.</p>
+            </div>
+            <div class="footeritem">
+                <div id="links">
+                    <a href="index.html">Home</a>
+                    <a href="html/store.html">Store</a>
+                    <a href="html/labtests.html">Tests</a>
+                    <a href="html/firstaid.html">First-Aid</a>
+                    <a href="html/blogs.html">Blogs</a>
+                    <a href="html/consult.html">Consult</a>
+                </div>
+            </div>
+            <div class="footeritem">
+                <p class="footerheading">Contact Us</p>
+                <div class="links">
+                    <ul style="list-style: none;">
+                        <li>+91 99887 76655</li>
+                        <li>info@quickmed.com</li>
+                        <li>123, Rajpura, Punjab 123456</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="bottom">
+            &copy; 2024 Copyright: QuickMed.com 
+        </div>
+    </footer>
+
+    <div id="consultModalContainer">
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Consulting Appointment</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeBtn">
+                            <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="POST">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone:</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Enter Phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date:</label>
+                                <input type="date" class="form-control" id="date">
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time:</label>
+                                <input type="time" class="form-control" id="time">
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Age:</label>
+                                <input type="number" class="form-control" id="age">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address:</label>
+                                <textarea id="address" name="address"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="bookBtn" class="btn">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

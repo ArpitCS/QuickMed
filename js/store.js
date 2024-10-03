@@ -113,9 +113,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function loadProducts(productsToLoad) {
     let htmlContent = "";
+    let htmlContentA = "";
     productsToLoad.forEach((product) => {
       let shortDesc = getWords(product.description, 15);
       htmlContent += `
+        <div class="product-card card">
+                    <div class="product-image" onclick="viewProduct(${product.id})">
+                        <img src="${product.image}">
+                    </div>
+                    <div class="product-body">
+                        <div class="product-info-left">
+                            <div class="product-categories">${product.categories.join(", ")}</div>
+                            <div class="product-title" onclick="viewProduct(${product.id})">${product.name}</div>
+                            <div class="product-brand">by ${product.brand}</div>
+                        </div>
+                        <div class="product-info-right">
+                            <div class="product-rating">
+                                <i class="fa fa-star"></i>
+                                (4.5)
+                            </div>
+                            <div class="product-price">₹${product.price}</div>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <button class="btn" onclick="addToCart(${product.id})">+ Add to Cart</button>
+                    </div>
+                </div>
+      `;
+
+      htmlContentA += `
               <div class="card">
                 <img src="${product.image}" alt="Placeholder" class="card-img">
                 <div class="card-content">
