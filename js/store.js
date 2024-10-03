@@ -232,5 +232,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedWords = words.slice(0, numWords);
     return selectedWords.join(' ');
   }
-});
 
+  const expandBtn = document.getElementById("expand-btn");
+  const expandIcon = document.getElementById("expand-icon");
+  expandBtn.onclick = function () {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("show");
+    expandBtn.classList.toggle("expanded");
+    expandIcon.classList.toggle("fa-down-long");
+    expandIcon.classList.toggle("fa-up-long");
+  }
+});

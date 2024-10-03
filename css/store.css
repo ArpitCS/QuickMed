@@ -1,19 +1,141 @@
+/* MAIN BODY */
 #main {
     display: flex;
     align-items:flex-start;
     justify-content: center;
 }
 
+@media screen and (max-width: 1024px) {
+    #main {
+        flex-direction: column;
+    }
+}
+
+#body-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 50px;
+
+    select {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+}
+
+#expand-btn {
+    display: none;
+    background-color: #165057;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+/* SIDEBAR */
+#sidebar {
+    width: 20%;
+    margin: 20px 0px;
+    padding: 0px 25px;
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: column;
+
+    ul {
+        list-style-type: none;
+        li {
+            margin: 10px 0;
+            font-size: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sidebar-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-section ul li {
+    margin: 5px 0;
+}
+
+.sidebar-section ul li a {
+    text-decoration: none;
+    color: #165057;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.sidebar-section ul li a:hover {
+    color: #5e949a;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 568px) {
+    #sidebar {
+        width: 100%;
+        margin: 10px auto;
+        gap: 20px;
+        display: none;
+    }
+
+    #expand-btn {
+        display: block;
+    }
+
+    .expanded {
+        background-color: white !important;
+        color: #165057 !important;
+        border: 1px solid #165057 !important;
+    }
+
+    h5 {
+        text-align: center;
+    }
+    
+    .sidebar-section {
+        width: 100%;
+        padding: 20px;
+        border-radius: 20px;
+        margin: 0px auto;
+    }
+}
+
+/* PRODUCT CARDS */
 #productCards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin: 20px;
-    width: 75%;
+    width: 80%;
 }
 
 @media screen and (max-width: 1024px) {
     #productCards {
+        width: 100%;
+        margin: 0px auto;
+        padding: 0px 10px;
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -103,6 +225,7 @@
     }
 }
 
+/* PRODUCT PAGE */
 #product {
     margin: 0px 50px;
 
@@ -172,89 +295,6 @@
                 background-color: #5e949a;
                 color: #fff;
             }
-        }
-    }
-}
-
-#body-header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 50px;
-
-    select {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-    }
-}
-
-#sidebar {
-    width: 25%;
-    margin: 20px 0px;
-    padding: 0px 25px;
-
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-direction: column;
-
-    ul {
-        list-style-type: none;
-        li {
-            margin: 10px 0;
-            font-size: 1rem;
-            cursor: pointer;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-}
-
-#category-filter {
-    .category {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        margin: 5px 0;
-        cursor: pointer;
-
-        .category-name {
-            font-size: 1rem;
-        }
-    }
-}
-
-#price-filter {
-
-    input {
-        padding: 5px 10px;
-        border: none;
-        border-radius: 25px;
-    }
-
-    #price-range {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-    }
-}
-
-#brand-filter {
-    .brand {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        margin: 5px 0;
-        cursor: pointer;
-
-        .brand-name {
-            font-size: 1rem;
         }
     }
 }
