@@ -8,7 +8,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDrnWyO4P2SqgDa2jenxq1FxiRf0KIvrbs",
+  apiKey: "",
   authDomain: "quick-med-1623.firebaseapp.com",
   projectId: "quick-med-1623",
   storageBucket: "quick-med-1623.appspot.com",
