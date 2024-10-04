@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>
               <div class="cart-price">
                 <p class="tag">Price: </p>
-                <p>Rs.100</p>
+                <p>${item.price}</p>
               </div>
               <div class="cart-quantity">
                 <p class="tag">Quantity: </p>
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>
               <div class="cart-net-price">
                 <p class="tag">Net Price: </p>
-                <p>Rs.100</p>
+                <p>${item.price}</p>
               </div>
             `;
       cartItemsContainer.appendChild(cartItemElement);
