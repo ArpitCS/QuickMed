@@ -8,7 +8,7 @@ import {
 
 document.addEventListener("DOMContentLoaded", async function () {
   const firebaseConfig = {
-    apiKey: "AIzaSyDrnWyO4P2SqgDa2jenxq1FxiRf0KIvrbs",
+    apiKey: "",
     authDomain: "quick-med-1623.firebaseapp.com",
     projectId: "quick-med-1623",
     storageBucket: "quick-med-1623.appspot.com",
