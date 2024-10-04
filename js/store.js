@@ -2,7 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebas
 import {
   getFirestore,
   collection,
-  addDoc,
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
@@ -43,7 +42,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function updateCartAmount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let totalAmount = cart.reduce((total, item) => total + item.price, 0);
+    let totalAmount = cart.reduce(
+      (total, item) => total + item.quantity * item.price,
+      0
+    );
     cartAmountElement.textContent = `${totalAmount}`;
   }
 
@@ -91,16 +93,32 @@ document.addEventListener("DOMContentLoaded", async function () {
     updateCartAmount();
   }
 
+  // Add to Cart function with fixed quantity initialization and duplicate handling
   window.addToCart = function (productId) {
     const product = products.find((p) => p.id === productId);
     if (!product) return;
 
+    // Fetch cart from localStorage
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(product);
+
+    // Check if the product already exists in the cart
+    const existingProductIndex = cart.findIndex((item) => item.id === productId);
+
+    if (existingProductIndex !== -1) {
+      // If product exists, increment its quantity
+      cart[existingProductIndex].quantity += 1;
+    } else {
+      // If product is new, add it with a default quantity of 1
+      cart.push({ ...product, quantity: 1 });
+    }
+
+    // Save updated cart back to localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    alert(`${product.name} added to cart`);
+    // Update cart amount in the UI
     updateCartAmount();
+
+    alert(`${product.name} added to cart`);
   };
 
   const mainContainer = document.getElementById("main");

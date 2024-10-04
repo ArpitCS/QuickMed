@@ -26,12 +26,12 @@
 }
 
 .cart-item {
-    /* display: flex;
+    display: flex;
     align-items: center;
-    justify-content: space-between; */
+    justify-content: space-between;
 
-    display: grid;
-    grid-template-columns: 1fr auto 1fr 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr auto 1fr 1fr 1fr; */
     width: 100%;
     padding: 10px;
     border-bottom: 1px solid #dddddd;
@@ -118,9 +118,6 @@
 .cart-item .tag {
     font-size: 14px;
     font-weight: 700;
-}
-
-.tag {
     display: none;
 }
 
@@ -162,6 +159,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 16px;
+    gap: 30px;
 }
 
 .total-item span {
