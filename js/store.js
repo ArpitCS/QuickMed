@@ -1,3 +1,4 @@
+// Firebase Imports
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 import {
   getFirestore,
@@ -6,6 +7,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
+  // Firebase Configuration
   const firebaseConfig = {
     apiKey: "",
     authDomain: "quick-med-1623.firebaseapp.com",
@@ -28,7 +30,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         id: doc.id,
         ...doc.data(),
       }));
-      console.log("Products: ", products);
       loadProducts(products); // Load products after fetching
     } catch (error) {
       console.error("Error fetching products: ", error);
@@ -52,16 +53,19 @@ document.addEventListener("DOMContentLoaded", async function () {
   function loadProducts(productsToLoad) {
     let htmlContent = "";
     productsToLoad.forEach((product) => {
-      let shortDesc = getWords(product.description, 15);
       htmlContent += `
         <div class="product-card card">
           <div class="product-image" onclick="viewProduct('${product.id}')">
-            <img src="${product.image}">
+            <img loading="lazy" src="${product.image}">
           </div>
           <div class="product-body">
             <div class="product-info-left">
-              <div class="product-categories">${product.categories.join(", ")}</div>
-              <div class="product-title" onclick="viewProduct('${product.id}')">${product.name}</div>
+              <div class="product-categories">${product.categories.join(
+                ", "
+              )}</div>
+              <div class="product-title" onclick="viewProduct('${
+                product.id
+              }')">${product.name}</div>
               <div class="product-brand">by ${product.brand}</div>
             </div>
             <div class="product-info-right">
@@ -73,7 +77,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div>
           </div>
           <div class="product-footer">
-            <button class="btn" onclick="addToCart('${product.id}')">+ Add to Cart</button>
+            <button class="btn" onclick="addToCart('${
+              product.id
+            }')">+ Add to Cart</button>
           </div>
         </div>
       `;
@@ -102,7 +108,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     // Check if the product already exists in the cart
-    const existingProductIndex = cart.findIndex((item) => item.id === productId);
+    const existingProductIndex = cart.findIndex(
+      (item) => item.id === productId
+    );
 
     if (existingProductIndex !== -1) {
       // If product exists, increment its quantity
@@ -162,12 +170,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   loadProducts(products);
   updateCartAmount();
 
-  function getWords(str, numWords) {
-    const words = str.split(/\s+/);
-    const selectedWords = words.slice(0, numWords);
-    return selectedWords.join(" ");
-  }
-
   const expandBtn = document.getElementById("expand-btn");
   const expandIcon = document.getElementById("expand-icon");
   expandBtn.onclick = function () {
@@ -177,4 +179,162 @@ document.addEventListener("DOMContentLoaded", async function () {
     expandIcon.classList.toggle("fa-down-long");
     expandIcon.classList.toggle("fa-up-long");
   };
+
+  const categoriesList = document.getElementById("categories-list");
+  const brandsList = document.getElementById("brands-list");
+  const concernList = document.getElementById("concern-list");
+
+  let filters = {
+    category: ["Medicines", "Supplements", "Personal Care", "Health Devices"],
+    brand: [
+      "Eagle",
+      "Dr. Morepen",
+      "Dabur",
+      "Liveasy",
+      "Himalaya",
+      "Moov",
+      "Aivil",
+      "AVP",
+      "Micro Labs",
+    ],
+    concern: [
+      "General Care",
+      "Skin Care",
+      "Diabetes",
+      "Heart Care",
+      "Joints Care",
+      "Kidney Care",
+      "Derma Care",
+    ],
+  };
+
+  function loadFilters() {
+    let categoryHtml = "";
+    let brandHtml = "";
+    let concernHtml = "";
+
+    filters.category.forEach((category) => {
+      categoryHtml += `
+        <li class="filter">
+          <input type="checkbox" id="category-${category}" value="${category}" onchange="toggleCategory('${category}')">
+          <label for="category-${category}">${category}</label>
+        </li>
+      `;
+    });
+
+    filters.brand.forEach((brand) => {
+      brandHtml += `
+        <li class="filter">
+          <input type="checkbox" id="brand-${brand}" value="${brand}" onchange="toggleBrand('${brand}')">
+          <label for="brand-${brand}">${brand}</label>
+        </li>
+      `;
+    });
+
+    filters.concern.forEach((concern) => {
+      concernHtml += `
+        <li class="filter">
+          <input type="checkbox" id="concern-${concern}" value="${concern}" onchange="toggleConcern('${concern}')">
+          <label for="concern-${concern}">${concern}</label>
+        </li>
+      `;
+    });
+
+    categoriesList.innerHTML = categoryHtml;
+    brandsList.innerHTML = brandHtml;
+    concernList.innerHTML = concernHtml;
+  }
+
+  loadFilters();
+
+  let selectedCategories = [];
+  let selectedBrands = [];
+  let selectedConcerns = [];
+
+  localStorage.setItem(
+    "selectedCategories",
+    JSON.stringify(selectedCategories)
+  );
+  localStorage.setItem("selectedBrands", JSON.stringify(selectedBrands));
+  localStorage.setItem("selectedConcerns", JSON.stringify(selectedConcerns));
+
+  window.toggleCategory = function (category) {
+    const index = selectedCategories.indexOf(category);
+    if (index > -1) {
+      selectedCategories.splice(index, 1);
+    } else {
+      selectedCategories.push(category);
+    }
+    localStorage.setItem(
+      "selectedCategories",
+      JSON.stringify(selectedCategories)
+    );
+    filterProducts();
+  };
+
+  window.toggleBrand = function (brand) {
+    const index = selectedBrands.indexOf(brand);
+    if (index > -1) {
+      selectedBrands.splice(index, 1);
+    } else {
+      selectedBrands.push(brand);
+    }
+    localStorage.setItem("selectedBrands", JSON.stringify(selectedBrands));
+    filterProducts();
+  };
+
+  window.toggleConcern = function (concern) {
+    const index = selectedConcerns.indexOf(concern);
+    if (index > -1) {
+      selectedConcerns.splice(index, 1);
+    } else {
+      selectedConcerns.push(concern);
+    }
+    localStorage.setItem("selectedConcerns", JSON.stringify(selectedConcerns));
+    filterProducts();
+  };
+
+  function filterProducts() {
+    let filteredProducts = products;
+    if (selectedCategories.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        selectedCategories.some((category) =>
+          product.categories.includes(category)
+        )
+      );
+    }
+    if (selectedBrands.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        selectedBrands.includes(product.brand)
+      );
+    }
+    if (selectedConcerns.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        selectedConcerns.some((category) =>
+          product.categories.includes(category)
+        )
+      );
+    }
+    loadProducts(filteredProducts);
+  }
+
+  const clearFilterBtn = document.getElementById("clear-filters");
+  clearFilterBtn.onclick = function () {
+    selectedCategories = [];
+    selectedBrands = [];
+    selectedConcerns = [];
+    localStorage.setItem(
+      "selectedCategories",
+      JSON.stringify(selectedCategories)
+    );
+    localStorage.setItem("selectedBrands", JSON.stringify(selectedBrands));
+    localStorage.setItem("selectedConcerns", JSON.stringify(selectedConcerns));
+
+    // Unclick all checkboxes
+    const checkboxes = document.querySelectorAll("input[type='checkbox']");
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
+    loadProducts(products);
+  }; 
 });

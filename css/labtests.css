@@ -1,101 +1,300 @@
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 #tests {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 20px;
 }
 
-.testCard {
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #ccc;
+#test-banner {
+    background: url(../assets/tests-banner.png) no-repeat center center/contain;
+    height: 300px;
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+  #test-banner {
+    background: url(../assets/test-banner-mobile.png) no-repeat center center/contain;
+  }
+}
+
+#regular-checks-container, #test-packages-container {
+  padding: 20px 100px;
+}
+
+.regular-test-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #fff;
+  border: 1px solid #e7e7e5;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: 0px !important;
+  }
+
+  .regular-right {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 10px;
+
+    p:nth-child(1) {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    p:nth-child(2) {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a5a62;
+    }
+
+    button {
+      background-color: #2b97a4;
+      color: white;
+      padding: 7px 14px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1a5a62;
+      transition: all 0.2s;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #regular-checks-container, #test-packages-container {
+    flex-wrap: nowrap !important;
+    overflow: scroll;
+    padding: 20px;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a5a62;
+  margin-left: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    margin-left: 20px;
+    font-size: 1.5rem;
+  }
+  
+}
+
+.test-package-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #e7e7e5;
+  border-radius: 15px;
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: 0px !important;
+  }
+
+  .test-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 !important;
+    justify-content: space-between;
+    width: 100%;
 
-    .top {
-        background-color: #f1f1f1;
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        gap: 10px;
-
-        .card-title {
-            font-weight: 800;
-        }
-
-        .card-tests {
-            background-color: #f3bd8a;
-            padding: 4px;
-            width: 30%;
-            border-radius: 25px;
-            text-align: center;
-        }
+    .header-left img {
+      border: 1px solid gray;
+      border-radius: 7px;
     }
-    
-    .bottom {
-        background-color: #165057;
-        color: white;
+
+    .header-right {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+
+      p:nth-child(1) {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      p:nth-child(2) {
+        font-size: 1rem;
         font-weight: 600;
-        width: 100%;
-        padding: 10px 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-
-        #bookBtn {
-            background-color: #2b97a4;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
-        #bookBtn:hover {
-            background-color: #5dbdc7;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    }
-}
-
-@media (min-width: 768px) {
-    .col-md-4 {
-      flex: 0 0 auto;
-      width: 30%;
+        color: gray;
+      }
     }
   }
 
-#testModalBody #clientDetails {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+  .test-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
-    .formGroup {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
+    .footer-left p {
+      font-size: 1rem;
+      font-weight: 700;
+      background-color: #1a5a62 !important;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 25px;
     }
 
-    input, textarea {
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
+    .footer-right button {
+      background-color: #2b97a4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
 
-    #clientAddress {
-        grid-column: 1 / 3;
+      &:hover {
+        background-color: #1a5a62;
+        transition: all 0.2s;
+      }
     }
+  }
 }
 
+.test-package-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.test-package-card:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #f3feff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #test-packages-container {
+    flex-wrap: nowrap !important;
+    overflow: scroll;
+  }
+  
+}
+
+#test-package-view {
+  padding: 20px 50px;
+}
+
+.package-card {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  gap: 20px;
+
+  .package-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .package-item {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .package-price span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a5a62;
+  }
+
+  .book-btn {
+    background-color: #2b97a4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    justify-content: flex-end;
+
+    &:hover {
+      background-color: #1a5a62;
+      transition: all 0.2s;
+    } 
+  }
+}
+
+.test-overview {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0px;
+}
+
+.test-overview h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a5a62;
+}
+
+.test-overview p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.test-overview table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.test-overview table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.test-overview table td:first-child {
+  font-weight: 700;
+  color: #1a5a62;
+}
+
+@media screen and (max-width: 768px) {
+  #test-package-view {
+    padding: 20px;
+  }
+
+  .package-card {
+    padding: 20px;
+  }
+
+  .test-overview {
+    padding: 20px;
+  }
+}

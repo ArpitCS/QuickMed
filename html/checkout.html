@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QuickMed: Cart</title>
+    <title>QuickMed: Checkout</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
 
     <!-- Bootstrap -->
@@ -30,7 +30,7 @@
 
     <!-- CSS Links -->
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/cart.css" />
+    <link rel="stylesheet" href="../css/checkout.css" />
     <link rel="stylesheet" href="../css/store.css" />
   </head>
 
@@ -109,40 +109,178 @@
       </div>
     </header>
 
-    <div id="main">
-      <div id="cart-container">
-        <div id="cart-items"></div>
+    <div id="shipping-container" class="row">
+      <div class="shipping-left col-md-6 col-sm-12">
+        <form id="shipping-form">
+          <div class="form-group">
+            <label for="email">Email*:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter Email"
+              required
+            />
+            <p class="form-info">You can create an account after checkout.</p>
+          </div>
+          <hr />
+          <div class="form-group">
+            <label for="first-name">First Name*:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="first-name"
+              placeholder="Enter First Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name*:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="last-name"
+              placeholder="Enter Last Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">Address*:</label>
+            <textarea
+              class="form-control"
+              id="address"
+              placeholder="Enter Address*:"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="city">City*:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              placeholder="Enter City"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="state">State*:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="state"
+              placeholder="Enter State"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="zip">Zip*:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="zip"
+              placeholder="Enter Zip"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone-no">Phone Number*:</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phone-no"
+              placeholder="Enter Phone Number"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <hr />
+            <p>SHIPPING METHODS</p>
+            <table class="shipping-method-table">
+              <tr>
+                <td>
+                  <input type="radio" name="shipping" id="shipping-standard" />
+                </td>
+                <td>
+                  <label for="shipping-standard">Standard Shipping</label>
+                </td>
+                <td>
+                  <p>Rs. 0</p>
+                </td>
+                <td>
+                  <p>5-7 Business Day</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="radio" name="shipping" id="shipping-express" />
+                </td>
+                <td>
+                  <label for="shipping-express">Express Shipping</label>
+                </td>
+                <td>
+                  <p>Rs. 100</p>
+                </td>
+                <td>
+                  <p>2-3 Business Day</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div class="form-group">
+            <p>PAYMENT METHODS</p>
+            <input type="radio" name="payment" id="payment-cod" />
+            <label for="payment-cod">Cash on Delivery</label>
+            <input type="radio" name="payment" id="payment-card" />
+            <label for="payment-card">Credit/Debit Card</label>
+          </div>
+        </form>
       </div>
-      <div id="cart-total">
-        <div class="total-header">
-          <h3>Cart Summary</h3>
-        </div>
-        <div class="total-body">
-          <div class="total-item">
-            <span>Subtotal</span>
-            <span id="subtotal">Rs.0</span>
+      <div class="shipping-right col-md-6 col-sm-12">
+        <div id="cart-summary">
+          <div id="cart-total">
+            <div class="total-header">
+              <h5><strong>ORDER SUMMARY</strong></h5>
+            </div>
+            <div class="total-body">
+              <div class="total-item">
+                <span>Subtotal</span>
+                <span id="subtotal">Rs.0</span>
+              </div>
+              <div class="total-item">
+                <span>Shipping</span>
+                <span id="shipping">Rs.0</span>
+              </div>
+              <div class="total-item">
+                <span>Tax</span>
+                <span id="tax">Rs.0</span>
+              </div>
+              <div class="total-item">
+                <span>Discount</span>
+                <span id="discount">Rs.0</span>
+              </div>
+              <hr />
+              <div class="cart-total-item">
+                <span>Total: </span>
+                <span id="totalPrice">Rs.0</span>
+              </div>
+            </div>
+            <hr />
+            <div class="carts-header">
+              <p id="cart-count">10 Items in Cart</p>
+              <button id="cart-expand-btn">
+                <span>↓</span>
+              </button>
+            </div>
+            <div id="cart-items"></div>
+
+            <div class="total-footer">
+              <button class="btn btn-primary" id="checkoutBtn">
+                Proceed to Payment
+              </button>
+            </div>
           </div>
-          <div class="total-item">
-            <span>Shipping</span>
-            <span id="shipping">Rs.0</span>
-          </div>
-          <div class="total-item">
-            <span>Tax</span>
-            <span id="tax">Rs.0</span>
-          </div>
-          <div class="total-item">
-            <span>Discount</span>
-            <span id="discount">Rs.0</span>
-          </div>
-          <hr>
-          <div class="cart-total-item">
-            <span>Total: </span>
-            <span id="totalPrice">Rs.0</span>
-          </div>
-        </div>
-        <div class="total-footer">
-          <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
-          <button type="button" id="clearBtn" class="btn">Clear
         </div>
       </div>
     </div>
@@ -263,7 +401,7 @@
       </div>
     </div>
 
-    <script src="../js/cart.js"></script>
+    <script src="../js/checkout.js"></script>
     <script src="../js/index.js"></script>
   </body>
 </html>

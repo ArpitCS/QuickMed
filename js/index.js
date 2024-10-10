@@ -29,4 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
   consultButton2.addEventListener("click", function () {
     consultModal.toggle();
   });
+
+  const searchValue = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchButton");
+
+  searchBtn.addEventListener("click", function () {
+    const query = searchValue.value;
+    window.location.href = `html/store.html?q=${query}`;
+  });
 });
