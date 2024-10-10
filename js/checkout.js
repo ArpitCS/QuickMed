@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const discountElement = document.getElementById("discount");
   const cartAmountElement = document.getElementById("cart-amount");
   const cartContainer = document.getElementById("cart-items");
+  const payAmount = document.getElementById("pay-amount");
 
   cartContainer.classList.add("hide");
 
   // Set static values for shipping, tax, and discount
-  const shippingAmount = 500;
+  let shippingAmount = 500;
   const taxRate = 0.18; // 18%
   const discountRate = 0.05; // 5%
   let totalAmount = 0;
@@ -40,6 +41,15 @@ document.addEventListener("DOMContentLoaded", function () {
       totalAmount * taxRate -
       totalAmount * discountRate
     ).toFixed(2)}`;
+  }
+
+  function totalAmountF() {
+    return (
+      (totalAmount +
+      shippingAmount +
+      totalAmount * taxRate -
+      totalAmount * discountRate).toFixed(2)
+    );
   }
 
   async function loadCartItems() {
@@ -74,98 +84,161 @@ document.addEventListener("DOMContentLoaded", function () {
     cartContainer.classList.toggle("hide");
   });
 
-  // function updateCart(cart) {
-  //   cartItemsContainer.innerHTML = "";
-  //   let subtotal = 0;
+  const checkoutBtn = document.getElementById("checkout-btn");
+  let checkoutData = {};
 
-  //   cart.forEach((item) => {
-  //     const cartItemElement = document.createElement("div");
-  //     cartItemElement.className = "cart-item col-12";
-  //     cartItemElement.innerHTML = `
-  //       <div class="cart-remove">
-  //         <button onclick="removeFromCart('${item.id}')" class="remove-btn">
-  //           <i class="fa-solid fa-close"></i>
-  //         </button>
-  //       </div>
-  //       <div class="cart-title">
-  //         <img src="${item.image || '../assets/testsIcon.png'}" alt="${item.name}" />
-  //         <div>
-  //           <p>${item.name}</p>
-  //         </div>
-  //       </div>
-  //       <div class="cart-price">
-  //         <p class="tag">Price: </p>
-  //         <p>₹${item.price.toFixed(2)}</p>
-  //       </div>
-  //       <div class="cart-quantity">
-  //         <p class="tag">Quantity: </p>
-  //         <div>
-  //           <button onclick="decrementQty('${item.id}')" class="btn">-</button>
-  //           <p>${item.quantity}</p>
-  //           <button onclick="incrementQty('${item.id}')" class="btn">+</button>
-  //         </div>
-  //       </div>
-  //       <div class="cart-net-price">
-  //         <p class="tag">Net Price: </p>
-  //         <p>₹${(item.price * item.quantity).toFixed(2)}</p>
-  //       </div>
-  //     `;
-  //     cartItemsContainer.appendChild(cartItemElement);
-  //     subtotal += item.price * item.quantity; // Calculate subtotal
-  //   });
+  checkoutBtn.addEventListener("click", async function () {
+    const email = document.getElementById("email").value;
+    const firstName = document.getElementById("first-name").value;
+    const lastName = document.getElementById("last-name").value;
+    const address = document.getElementById("address").value;
+    const city = document.getElementById("city").value;
+    const state = document.getElementById("state").value;
+    const zip = document.getElementById("zip").value;
+    const country = document.getElementById("country").value;
+    const phone = document.getElementById("phone-no").value;
 
-  //   // Calculate totals
-  //   const taxAmount = subtotal * taxRate;
-  //   const discountAmount = subtotal * discountRate;
-  //   const total = subtotal + shippingAmount + taxAmount - discountAmount;
+    // Get selected shipping method
+    const shippingMethod = document.querySelector(
+      'input[name="shipping"]:checked'
+    );
+    const selectedShipping = shippingMethod ? shippingMethod.id : null;
 
-  //   // Update total display elements
-  //   subtotalElement.textContent = `₹${subtotal.toFixed(2)}`;
-  //   shippingElement.textContent = `₹${shippingAmount}`;
-  //   taxElement.textContent = `₹${taxAmount.toFixed(2)}`;
-  //   discountElement.textContent = `₹${discountAmount.toFixed(2)}`;
-  //   totalPriceElement.textContent = `₹${total.toFixed(2)}`;
-  // }
+    // Get selected payment method
+    const paymentMethod = document.querySelector(
+      'input[name="payment"]:checked'
+    );
+    const selectedPayment = paymentMethod ? paymentMethod.id : null;
 
-  // window.incrementQty = function (productId) {
-  //   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  //   const product = cart.find((p) => p.id === productId);
-  //   if (product) {
-  //     product.quantity += 1;
-  //     localStorage.setItem("cart", JSON.stringify(cart));
-  //     updateCart(cart);
-  //     updateCartAmount();
-  //   }
-  // };
+    // Create an object to store the checkout data
+    checkoutData = {
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      address: address,
+      city: city,
+      state: state,
+      zip: zip,
+      country: country,
+      phone: phone,
+      shippingMethod: selectedShipping,
+      paymentMethod: selectedPayment,
+    };
 
-  // window.decrementQty = function (productId) {
-  //   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  //   const product = cart.find((p) => p.id === productId);
-  //   if (product && product.quantity > 1) {
-  //     product.quantity -= 1;
-  //     localStorage.setItem("cart", JSON.stringify(cart));
-  //     updateCart(cart);
-  //     updateCartAmount();
-  //   } else if (product && product.quantity === 1) {
-  //     removeFromCart(productId);
-  //   }
-  // };
+    console.log(checkoutData);
+    if (!paymentMethod || !shippingMethod) {
+      alert("Please select a payment and shipping method");
+      return;
+    }
 
-  // window.removeFromCart = function (productId) {
-  //   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  //   cart = cart.filter((p) => p.id !== productId);
-  //   localStorage.setItem("cart", JSON.stringify(cart));
-  //   updateCart(cart);
-  //   updateCartAmount();
-  //   alert("Item removed from cart");
-  // };
+    // Proceed based on selected payment method
+    if (selectedPayment === "payment-card") {
+      renderPaymentPortal(); // Redirect to payment portal
+    } else {
+      renderSuccessfulOrder(); // Complete order
+    }
+  });
 
-  // const clearButton = document.getElementById("clearBtn");
-  // clearButton.addEventListener("click", function () {
-  //   localStorage.removeItem("cart");
-  //   updateCart([]);
-  //   updateCartAmount();
-  // });
+  function renderPaymentPortal() {
+    const paymentPortal = document.getElementById("payment-portal");
+    const shippingContainer = document.getElementById("shipping-container");
+
+
+    const header = document.getElementById("header-element");
+    const newsletter = document.getElementById("newsletter");
+    const footer = document.getElementById("footer-element");
+
+    payAmount.textContent = `₹ ${totalAmountF()}`;
+
+    header.classList.add("hide");
+    newsletter.classList.add("hide");
+    footer.classList.add("hide");
+    shippingContainer.classList.add("hide");
+
+    paymentPortal.classList.remove("hide");
+
+    // shippingContainer.classList.add("hide");
+  }
+
+  function renderSuccessfulOrder() {
+    const orderSuccess = document.getElementById("order-success");
+    const shippingContainer = document.getElementById("shipping-container");
+
+    console.log("Success!");
+  }
+
+  const shippingMethods = document.querySelectorAll('input[name="shipping"]');
+  shippingMethods.forEach((method) => {
+    method.addEventListener("change", function () {
+      if (method.id === "shipping-express") {
+        shippingAmount = 600; // Express shipping cost
+      } else {
+        shippingAmount = 500; // Standard shipping cost
+      }
+      loadCartSummary(); // Update cart summary when shipping method is changed
+    });
+  });
+
+  const paymentMethods = document.querySelectorAll('input[name="pay-method"]');
+  const paymentDetailsContainer = document.getElementById("payment-details");
+  paymentMethods.forEach((method) => {
+    method.addEventListener("change", function () {
+      if (method.id === "pay-by-card") {
+        paymentDetailsContainer.innerHTML = `
+          <form id="card-payment">
+            <div class="form-group">
+              <label for="card-number">Card Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="card-number"
+                placeholder="Enter Card Number"
+              />
+            </div>  
+            <div class="form-group">
+              <label for="card-name">Name on Card</label>
+              <input
+                type="text"
+                class="form-control"
+                id="card-name"
+                placeholder="Enter Name on Card"
+              />
+            </div>
+            <div class="form-group">
+              <label for="expiry-date">Expiry Date</label>
+              <input
+                type="text"
+                class="form-control"
+                id="expiry-date"
+                placeholder="Enter Expiry Date"
+              />
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input
+                type="text"
+                class="form-control"
+                id="cvv"
+                placeholder="Enter CVV"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Pay</button>
+          </form>
+        `;
+      } else {
+        paymentDetailsContainer.innerHTML = `
+          <div id="upi-details">
+            <h2>QuickMed</h2>
+            <p>quickmed@upi</p>
+            <img src="../assets/QRCode.png" alt="quickmed@upi" width="150">
+            <p>Amount: ₹ 4000</p>
+
+            <p>Scan the QR using any UPI app on your phone</p>
+          </div>
+        `;
+      }
+    });
+  });
 
   loadCart();
   updateCartAmount();
