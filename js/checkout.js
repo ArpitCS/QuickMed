@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function totalAmountF() {
     return (
-      (totalAmount +
+      totalAmount +
       shippingAmount +
       totalAmount * taxRate -
-      totalAmount * discountRate).toFixed(2)
-    );
+      totalAmount * discountRate
+    ).toFixed(2);
   }
 
   async function loadCartItems() {
@@ -143,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const paymentPortal = document.getElementById("payment-portal");
     const shippingContainer = document.getElementById("shipping-container");
 
-
     const header = document.getElementById("header-element");
     const newsletter = document.getElementById("newsletter");
     const footer = document.getElementById("footer-element");
@@ -156,6 +155,25 @@ document.addEventListener("DOMContentLoaded", function () {
     shippingContainer.classList.add("hide");
 
     paymentPortal.classList.remove("hide");
+
+    const billingInformation = document.getElementById("billing-information");
+
+    billingInformation.innerHTML = `
+      <h3>Billing Information</h3>
+      <p><strong>Email:</strong> ${checkoutData.email}</p>
+      <p><strong>First Name:</strong> ${checkoutData.firstName}</p>
+      <p><strong>Last Name:</strong> ${checkoutData.lastName}</p>
+      <p><strong>Address:</strong> ${checkoutData.address}</p>
+      <p><strong>City:</strong> ${checkoutData.city}</p>
+      <p><strong>State:</strong> ${checkoutData.state}</p>
+      <p><strong>ZIP Code:</strong> ${checkoutData.zip}</p>
+      <p><strong>Country:</strong> ${checkoutData.country}</p>
+      <p><strong>Phone:</strong> ${checkoutData.phone}</p>
+      
+      <h4>Shipping & Payment</h4>
+      <p><strong>Shipping Method:</strong> ${checkoutData.shippingMethod}</p>
+      <p><strong>Payment Method:</strong> ${checkoutData.paymentMethod}</p>
+    `;
 
     // shippingContainer.classList.add("hide");
   }
@@ -231,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <h2>QuickMed</h2>
             <p>quickmed@upi</p>
             <img src="../assets/QRCode.png" alt="quickmed@upi" width="150">
-            <p>Amount: ₹ 4000</p>
+            <p>Amount: ₹ ${totalAmountF()}</p>
 
             <p>Scan the QR using any UPI app on your phone</p>
           </div>
