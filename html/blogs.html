@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,16 @@
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- CSS Links -->
     <link rel="stylesheet" href="../css/style.css">
@@ -21,77 +27,58 @@
 <body>
     <header>
         <div id="header">
-          <div id="logo">
-            <a href="../index.html">
-              <img src="../assets/logo-full.png" alt="QuickMed Logo" />
-            </a>
-          </div>
-          <div id="searchbar">
-            <input type="text" placeholder="Search products" id="searchInput" />
-            <span id="searchButton"
-              ><i class="fa-solid fa-magnifying-glass"></i
-            ></span>
-          </div>
-          <div id="right-header">
-            <div id="cart">
-              <a href="cart.html">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </a>
-              <div id="amount">
-                <i class="fa-solid fa-rupee-sign">:</i>
-                <div id="cart-amount">XX,XXX</div>
-              </div>
+            <div id="logo">
+                <a href="../index.html">
+                    <img src="../assets/logo-full.png" alt="QuickMed Logo" />
+                </a>
             </div>
-            <div id="profile">
-              <a href="login.html">
-                <i class="fa-solid fa-user"></i>
-              </a>
+            <div id="searchbar">
+                <input type="text" placeholder="Search products" id="searchInput" />
+                <span id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></span>
             </div>
-          </div>
+            <div id="right-header">
+                <div id="cart">
+                    <a href="cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <div id="amount">
+                        <i class="fa-solid fa-rupee-sign">:</i>
+                        <div id="cart-amount">XX,XXX</div>
+                    </div>
+                </div>
+                <div id="profile">
+                    <a href="login.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+            </div>
         </div>
         <div id="navbar">
-          <div id="navlinks">
-            <div class="nav-item">
-              <span
-                ><a href="../index.html"
-                  ><i class="fa-solid fa-house"></i>Home</a
-                ></span
-              >
+            <div id="navlinks">
+                <div class="nav-item">
+                    <span><a href="../index.html"><i class="fa-solid fa-house"></i>Home</a></span>
+                </div>
+                <div class="nav-item">
+                    <span><a href="store.html"><i class="fa-solid fa-store"></i>Store</a></span>
+                </div>
+                <div class="nav-item">
+                    <span><a href="labtests.html"><i class="fa-solid fa-syringe"></i>Tests</a></span>
+                </div>
+                <div class="nav-item">
+                    <span><a href="firstaid.html"><i class="fa-solid fa-suitcase-medical"></i>First-Aid</a></span>
+                </div>
+                <div class="nav-item">
+                    <span><a href="blogs.html"><i class="fa-solid fa-blog"></i>Blogs</a></span>
+                </div>
+                <div class="nav-item">
+                    <span><a href="maps.html"><i class="fa-solid fa-map-pin"></i>Nearby</a></span>
+                </div>
             </div>
-            <div class="nav-item">
-              <span
-                ><a href="store.html"
-                  ><i class="fa-solid fa-store"></i>Store</a
-                ></span
-              >
+            <div id="consult" class="nav-item">
+                <span id="consultBtn"><i class="fa-solid fa-phone"></i>Consult</span>
             </div>
-            <div class="nav-item">
-              <span
-                ><a href="labtests.html"
-                  ><i class="fa-solid fa-syringe"></i>Tests</a
-                ></span
-              >
-            </div>
-            <div class="nav-item">
-              <span
-                ><a href="firstaid.html"
-                  ><i class="fa-solid fa-suitcase-medical"></i>First-Aid</a
-                ></span
-              >
-            </div>
-            <div class="nav-item">
-              <span
-                ><a href="blogs.html"
-                  ><i class="fa-solid fa-blog"></i>Blogs</a
-                ></span
-              >
-            </div>
-          </div>
-          <div id="consult" class="nav-item">
-            <span id="consultBtn"><i class="fa-solid fa-phone"></i>Consult</span>
-          </div>
         </div>
-      </header>
+    </header>
 
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
@@ -140,10 +127,18 @@
             <div class="card">
                 <img src="../images/blogs1.jpg" class="card-img-top" alt="Image 1">
                 <div class="card-body">
-                    <h5 class="card-title">National Eye Donation Fortnight 2024: Theme, Significance And Importance Of Donating The Visual Organs</h5>
-                    <p class="card-text">National Eye Donation Fortnight is observed every year from August 25th to September 8th, shining a spotlight on the importance of eye donation and encouraging individuals to pledge their eyes for the noble cause. This fortnight is dedicated to raising awareness about corneal blindness, promoting the life-changing impact of eye donations, and urging more people to contribute to the gift of sight. Through education and advocacy, National Eye Donation Fortnight aims to inspire communities to understand the profound difference they can make by pledging their eyes and supporting those in need of vision restoration.</p>
+                    <h5 class="card-title">National Eye Donation Fortnight 2024: Theme, Significance And Importance Of
+                        Donating The Visual Organs</h5>
+                    <p class="card-text">National Eye Donation Fortnight is observed every year from August 25th to
+                        September 8th, shining a spotlight on the importance of eye donation and encouraging individuals
+                        to pledge their eyes for the noble cause. This fortnight is dedicated to raising awareness about
+                        corneal blindness, promoting the life-changing impact of eye donations, and urging more people
+                        to contribute to the gift of sight. Through education and advocacy, National Eye Donation
+                        Fortnight aims to inspire communities to understand the profound difference they can make by
+                        pledging their eyes and supporting those in need of vision restoration.</p>
                     <p>
-                    The theme for National Eye Donation Fortnight for the year 2024 is ‘I Can See Clearly Now’ which mainly highlights the result of eye donation.
+                        The theme for National Eye Donation Fortnight for the year 2024 is ‘I Can See Clearly Now’ which
+                        mainly highlights the result of eye donation.
                     </p>
                     <a href="#" class="btn">Participate</a>
                 </div>
@@ -154,7 +149,10 @@
                 <img src="../images/blogs2.jpg" class="card-img-top" alt="Image 2">
                 <div class="card-body">
                     <h5 class="card-title">Tips for Surviving the Heat Wave</h5>
-                    <p class="card-text">India is grappling with a brutal heatwave as temperatures near 50°C. The sun isn’t just shining; it’s scorching! With ever-rising temperatures, there’s no escaping the oppressive heat (not yet), which can pose serious health risks. Excessive sweating, increased thir st, headache, fatigue, and nausea can be some of its warning signs and symptoms...</p>
+                    <p class="card-text">India is grappling with a brutal heatwave as temperatures near 50°C. The sun
+                        isn’t just shining; it’s scorching! With ever-rising temperatures, there’s no escaping the
+                        oppressive heat (not yet), which can pose serious health risks. Excessive sweating, increased
+                        thir st, headache, fatigue, and nausea can be some of its warning signs and symptoms...</p>
                     <a href="#" class="btn">Read More</a>
                 </div>
             </div>
@@ -162,7 +160,10 @@
                 <img src="../images/blogs3.jpg" class="card-img-top" alt="Image 2">
                 <div class="card-body">
                     <h5 class="card-title">Exercise to Manage Diabetes</h5>
-                    <p class="card-text">Achieving a balance between nutrition and exercise is crucial in the fight against diabetes. Regular exercise, prescribed medicines, and a well-planned diet can help reduce excess weight and insulin resistance. Understanding the role of nutrition and maintaining this balance is essential...</p>
+                    <p class="card-text">Achieving a balance between nutrition and exercise is crucial in the fight
+                        against diabetes. Regular exercise, prescribed medicines, and a well-planned diet can help
+                        reduce excess weight and insulin resistance. Understanding the role of nutrition and maintaining
+                        this balance is essential...</p>
                     <a href="#" class="btn">Read More</a>
                 </div>
             </div>
@@ -177,55 +178,63 @@
                 <div class="card-body">
                     <h5 class="card-title">The Power of a Balanced Diet: Simple Swaps for a Healthier You</h5>
                     <p class="card-date">28th August, 2024</p>
-                    <p class="card-text">Discover easy dietary changes that can enhance your overall health and energy levels</p>
+                    <p class="card-text">Discover easy dietary changes that can enhance your overall health and energy
+                        levels</p>
                     <a href="#" class="btn">Read More</a>
                 </div>
-            </div>    
+            </div>
             <div class="card col-md-4">
                 <img src="../images/blogs5.jpg" class="card-img-top" alt="Image 2">
                 <div class="card-body">
                     <h5 class="card-title">Stress Less: Effective Strategies to Manage and Reduce Anxiety</h5>
                     <p class="card-date">27th August, 2024</p>
-                    <p class="card-text">Explore practical techniques and lifestyle adjustments to help you stay calm and focused.</p>
+                    <p class="card-text">Explore practical techniques and lifestyle adjustments to help you stay calm
+                        and focused.</p>
                     <a href="#" class="btn">Read More</a>
                 </div>
-            </div>    
+            </div>
             <div class="card col-md-4">
                 <img src="../images/blogs6.jpg" class="card-img-top" alt="Image 2">
                 <div class="card-body">
-                    <h5 class="card-title">The Ultimate Guide to Plant-Based Proteins: Nourish Your Body with Plants</h5>
+                    <h5 class="card-title">The Ultimate Guide to Plant-Based Proteins: Nourish Your Body with Plants
+                    </h5>
                     <p class="card-date">27th August, 2024</p>
-                    <p class="card-text">Learn how to incorporate plant-based proteins into your meals for optimal health and vitality.</p>
+                    <p class="card-text">Learn how to incorporate plant-based proteins into your meals for optimal
+                        health and vitality.</p>
                     <a href="#" class="btn">Read More</a>
                 </div>
-            </div>    
+            </div>
             <div class="card col-md-4">
                 <img src="../images/blogs7.jpeg" class="card-img-top" alt="Image 2">
                 <div class="card-body">
                     <h5 class="card-title">Sleep Smarter: Tips for a Restful Night and Enhanced Daytime Performance</h5>
                     <p class="card-date">25th August, 2024</p>
-                    <p class="card-text">Get insights into improving your sleep quality and how it can positively impact your daily life.</p>
+                    <p class="card-text">Get insights into improving your sleep quality and how it can positively impact
+                        your daily life.</p>
                     <a href="#" class="btn">Read More</a>
                 </div>
-            </div>    
+            </div>
             <div class="card col-md-4">
                 <img src="../images/blogs8.jpg" class="card-img-top" alt="Image 2">
                 <div class="card-body">
-                    <h5 class="card-title">Mindfulness Matters: How to Practice Mindfulness for Better Mental Health</h5>
+                    <h5 class="card-title">Mindfulness Matters: How to Practice Mindfulness for Better Mental Health
+                    </h5>
                     <p class="card-date">24th August, 2024</p>
-                    <p class="card-text">Understand the benefits of mindfulness and how to integrate it into your daily routine for emotional balance.</p>
+                    <p class="card-text">Understand the benefits of mindfulness and how to integrate it into your daily
+                        routine for emotional balance.</p>
                     <a href="#" class="btn">Read More</a>
                 </div>
-            </div>    
+            </div>
             <div class="card col-md-4">
                 <img src="../images/blogs9.jpg" class="card-img-top" alt="Image 2">
                 <div class="card-body">
                     <h5 class="card-title">Move More: Creative Ways to Stay Active Without Hitting the Gym</h5>
                     <p class="card-date">20th August, 2024</p>
-                    <p class="card-text">Find innovative ways to incorporate physical activity into your daily life, even if you’re not a gym-goer.</p>
+                    <p class="card-text">Find innovative ways to incorporate physical activity into your daily life,
+                        even if you’re not a gym-goer.</p>
                     <a href="#" class="btn">Read More</a>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
 
@@ -236,15 +245,18 @@
     </div>
 
     <footer>
-    <div id="top">
-        <div class="footeritem" id="about">
-            <p class="footerheading">QuickMed</p>
-            <p>“QuickMed” is a Pharmacy/Medical website. This website enables the user to access various different medical services. This includes, whether the user wants to place an order for the medicines prescribed by a doctor or browse for latest blogs and articles related to the medicine industry. We aim to provide a user-friendly interface that allows easy access to different services.</p>
-        </div>
-        <div class="footeritem">
-            <div id="links">
-                <a href="../../index.html">Home</a>
-                <a href="store.html">Store</a>
+        <div id="top">
+            <div class="footeritem" id="about">
+                <p class="footerheading">QuickMed</p>
+                <p>“QuickMed” is a Pharmacy/Medical website. This website enables the user to access various different
+                    medical services. This includes, whether the user wants to place an order for the medicines
+                    prescribed by a doctor or browse for latest blogs and articles related to the medicine industry. We
+                    aim to provide a user-friendly interface that allows easy access to different services.</p>
+            </div>
+            <div class="footeritem">
+                <div id="links">
+                    <a href="../../index.html">Home</a>
+                    <a href="store.html">Store</a>
                     <a href="labtests.html">Tests</a>
                     <a href="firstaid.html">First-Aid</a>
                     <a href="blogs.html">Blogs</a>
@@ -263,7 +275,7 @@
             </div>
         </div>
         <div id="bottom">
-            &copy; 2024 Copyright: QuickMed.com 
+            &copy; 2024 Copyright: QuickMed.com
         </div>
     </footer>
 
@@ -319,4 +331,5 @@
 
     <script src="../js/index.js"></script>
 </body>
+
 </html>

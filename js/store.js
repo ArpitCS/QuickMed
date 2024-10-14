@@ -1,26 +1,13 @@
 // Firebase Imports
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+import { app, db, auth } from "./firebase.js";// Suggested code may be subject to a license. Learn more: ~LicenseLog:2683724769.
 import {
   getFirestore,
   collection,
   getDocs,
-} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/9.19.0/firebase-firestore.js";
+
 
 document.addEventListener("DOMContentLoaded", async function () {
-  // Firebase Configuration
-  const firebaseConfig = {
-    apiKey: "",
-    authDomain: "quick-med-1623.firebaseapp.com",
-    projectId: "quick-med-1623",
-    storageBucket: "quick-med-1623.appspot.com",
-    messagingSenderId: "1096038222882",
-    appId: "1:1096038222882:web:85243be5dd879a316ece7b",
-    measurementId: "G-TVMY8WXV4R",
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
   let products = [];
 
   window.fetchProducts = async function () {

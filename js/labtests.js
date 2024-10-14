@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const healthCheckups = [
     {
-      id : 1,
+      id: 1,
       name: "Basic Health Checkup",
       price: 1049,
       total: 56,
@@ -316,48 +316,48 @@ document.addEventListener("DOMContentLoaded", function () {
       const testElement = document.createElement("div");
       testElement.className = "testCard col-md-3 col-sm-12";
       testElement.innerHTML = `
-            <div class="regular-test-card">
-            <div class="regular-left">
-              <img src="${test.icon}">
-            </div>
-            <div class="regular-right">
-              <p>${test.name}</p>
-              <p>₹ ${test.price}</p>
-              <button>Book Now</button>
-            </div>
+        <div class="regular-test-card">
+          <div class="regular-left">
+            <img src="${test.icon}" alt="${test.name}">
           </div>
-            `;
+          <div class="regular-right">
+            <p>${test.name}</p>
+            <p>₹ ${test.price}</p>
+            <button class="book-button" data-id="${test.id}">Book Now</button>
+          </div>
+        </div>
+      `;
       regularTestsContainer.appendChild(testElement);
     });
   }
 
-  function renderTestPackageCars(tests) {
+
+  function renderTestPackageCards(tests) {
     tests.forEach((test) => {
       const testElement = document.createElement("div");
       testElement.className = "testCard col-md-3 col-sm-12";
       testElement.innerHTML = `
-      <div class="test-package-card">
-          <div class="test-header">
-          <div class="header-left">
-            <img src="${test.image}">
+        <div class="test-package-card">
+            <div class="test-header">
+            <div class="header-left">
+              <img src="${test.image}">
+            </div>
+            <div class="header-right">
+              <p>${test.name}</p>
+              <p>${test.total} Tests Included</p>
+            </div>
           </div>
-          <div class="header-right">
-            <p>${test.name}</p>
-            <p>${test.total} Tests Included</p>
+          <div class="test-footer">
+            <div class="footer-left">
+              <p>₹ ${test.price}</p>
+            </div>
+            <div class="footer-right">
+              <button>Book Now</button>
+            </div>
           </div>
         </div>
-        <div class="test-footer">
-          <div class="footer-left">
-            <p>₹ ${test.price}</p>
-          </div>
-          <div class="footer-right">
-            <button>Book Now</button>
-          </div>
-        </div>
-      </div>
             `;
       testElement.addEventListener("click", () => viewTestPackage(test));
-      testPackagesContainer.appendChild(testElement);
     });
   }
 
@@ -441,7 +441,32 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     testPackageView.innerHTML = content;
   }
-  
-  renderTestPackageCars(testPackages);
+
+  function renderCheckupCards(tests) {
+    tests.forEach((test) => {
+      const checkupElement = document.createElement("div");
+      checkupElement.className = "checkup-card col-md-3 col-sm-12";
+      checkupElement.innerHTML = `
+        <div class="checkup-top">
+          <div class="checkup-left">
+            <p class="checkup-title">${test.name}</p>
+            <p class="book-btn">Book Now →</p>
+          </div>
+          <div class="checkup-right">
+            <img src="${test.icon || 'default-image-url'}" alt="${test.name}" class="checkup-image">
+          </div>
+        </div>
+        <div class="checkup-bottom">
+          <p>Flat</p><br>
+          <span class="checkup-price">Rs. <p>${test.price}</p></span>
+        </div>
+      `;
+
+      healtCheckupsContainer.appendChild(checkupElement);
+    })
+  }
+
+  renderTestPackageCards(testPackages);
   renderRegularCards(regularTests);
+  renderCheckupCards(healthCheckups);
 });
