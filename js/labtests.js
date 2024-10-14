@@ -357,6 +357,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
             `;
+      testPackagesContainer.appendChild(testElement);
       testElement.addEventListener("click", () => viewTestPackage(test));
     });
   }
