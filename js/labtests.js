@@ -361,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function () {
       testElement.addEventListener("click", () => viewTestPackage(test));
     });
   }
-
+  
   function viewTestPackage(test) {
     const mainContainer = document.getElementById("main-container");
     const testPackageView = document.getElementById("test-package-view");

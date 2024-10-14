@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const searchInput = document.getElementById("searchInput");
   searchInput.addEventListener("input", function () {
     const query = searchInput.value;
+    searchInput.value = query;
     filterResults(query);
   });
 
