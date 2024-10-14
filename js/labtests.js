@@ -467,7 +467,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   }
 
-  renderTestPackageCards(testPackages);
   renderRegularCards(regularTests);
+  renderTestPackageCards(testPackages);
   renderCheckupCards(healthCheckups);
 });
