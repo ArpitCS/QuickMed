@@ -12,9 +12,9 @@ body {
 }
 
 #test-banner {
-    background: url(../assets/tests-banner.png) no-repeat center center/contain;
-    height: 300px;
-    margin: 20px;
+  background: url(../assets/tests-banner.png) no-repeat center center/contain;
+  height: 300px;
+  margin: 20px;
 }
 
 @media (max-width: 768px) {
@@ -23,7 +23,9 @@ body {
   }
 }
 
-#regular-checks-container, #test-packages-container {
+#regular-checks-container,
+#test-packages-container,
+#health-checkups-container {
   padding: 20px 100px;
 }
 
@@ -77,7 +79,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  #regular-checks-container, #test-packages-container {
+
+  #regular-checks-container,
+  #test-packages-container {
     flex-wrap: nowrap !important;
     overflow: scroll;
     padding: 20px;
@@ -96,7 +100,7 @@ h2 {
     margin-left: 20px;
     font-size: 1.5rem;
   }
-  
+
 }
 
 .test-package-card {
@@ -191,7 +195,7 @@ h2 {
     flex-wrap: nowrap !important;
     overflow: scroll;
   }
-  
+
 }
 
 #test-package-view {
@@ -244,7 +248,7 @@ h2 {
     &:hover {
       background-color: #1a5a62;
       transition: all 0.2s;
-    } 
+    }
   }
 }
 
@@ -296,5 +300,135 @@ h2 {
 
   .test-overview {
     padding: 20px;
+  }
+}
+
+.checkupCard {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkup-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 2px solid rgba(240, 46, 170, 0.4);
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+  padding: 30px;
+  height: 300px;
+  border-radius: 20px;
+
+  p {
+    margin: 0px !important;
+  }
+
+  .checkup-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .checkup-title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .book-btn {
+      align-self: flex-end;
+      margin: 5px 0px !important;
+      background-color: #1a5a62;
+      color: white;
+      padding: 7px 15px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .book-btn:hover {
+      outline: 2px solid #1a5a62;
+      color: #1a5a62;
+      background-color: white;
+    }
+  }
+
+  .checkup-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .checkup-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .checkup-bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+}
+
+.checkupCard:nth-child(1) {
+  .checkup-card {
+    border: 2px solid rgba(128, 128, 128, 0.4);
+    box-shadow: rgba(128, 128, 128, 0.4) 0px 5px,
+      rgba(128, 128, 128, 0.3) 0px 10px,
+      rgba(128, 128, 128, 0.2) 0px 15px,
+      rgba(128, 128, 128, 0.1) 0px 20px,
+      rgba(128, 128, 128, 0.05) 0px 25px;
+
+  }
+}
+
+.checkupCard:nth-child(2) {
+  .checkup-card {
+    border: 2px solid rgba(205, 127, 50, 0.4);
+    box-shadow: rgba(205, 127, 50, 0.4) 0px 5px,
+      rgba(205, 127, 50, 0.3) 0px 10px,
+      rgba(205, 127, 50, 0.2) 0px 15px,
+      rgba(205, 127, 50, 0.1) 0px 20px,
+      rgba(205, 127, 50, 0.05) 0px 25px;
+
+
+  }
+}
+
+.checkupCard:nth-child(3) {
+  .checkup-card {
+    border: 2px solid rgba(192, 192, 192, 0.4);
+    box-shadow: rgba(192, 192, 192, 0.4) 0px 5px,
+      rgba(192, 192, 192, 0.3) 0px 10px,
+      rgba(192, 192, 192, 0.2) 0px 15px,
+      rgba(192, 192, 192, 0.1) 0px 20px,
+      rgba(192, 192, 192, 0.05) 0px 25px;
+
+
+  }
+}
+
+.checkupCard:nth-child(4) {
+  .checkup-card {
+    border: 2px solid rgba(255, 215, 0, 0.4);
+    box-shadow: rgba(255, 215, 0, 0.4) 0px 5px,
+      rgba(255, 215, 0, 0.3) 0px 10px,
+      rgba(255, 215, 0, 0.2) 0px 15px,
+      rgba(255, 215, 0, 0.1) 0px 20px,
+      rgba(255, 215, 0, 0.05) 0px 25px;
+
   }
 }

@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 2,
-      name: "Regular Health Checkup",
+      name: "Bronze Health Checkup",
       price: 1449,
       total: 82,
       tests: ["Kidney Function", "Liver Function", "Thyroid Gland", "Lipid Profile", "Complete Blood Count"],
@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 3,
-      name: "Comprehensive Health Checkup",
+      name: "Silver Health Checkup",
       price: 1949,
       total: 90,
       tests: ["Heart", "Thyroid", "Kidney", "Liver", "Blood Sugar", "Complete Blood Count", "Lipid Profile", "Complete Urine Analysis"],
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 4,
-      name: "Advanced Health Checkup",
+      name: "Gold Health Checkup",
       price: 2499,
       total: 97,
       tests: ["Heart", "Thyroid", "Kidney", "Liver", "Blood Sugar", "Complete Blood Count", "Lipid Profile", "Complete Urine Analysis"],
@@ -446,20 +446,22 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderCheckupCards(tests) {
     tests.forEach((test) => {
       const checkupElement = document.createElement("div");
-      checkupElement.className = "checkup-card col-md-3 col-sm-12";
+      checkupElement.className = "checkupCard col-md-3 col-sm-12";
       checkupElement.innerHTML = `
-        <div class="checkup-top">
-          <div class="checkup-left">
-            <p class="checkup-title">${test.name}</p>
-            <p class="book-btn">Book Now →</p>
+        <div class="checkup-card">
+          <div class="checkup-top">
+            <div class="checkup-left">
+              <p class="checkup-title">${test.name}</p>
+              <p class="book-btn">Book Now →</p>
+            </div>
+            </div>
+            <div class="checkup-right">
+              <img src="${test.icon || 'default-image-url'}" alt="${test.name}" class="checkup-image">
+            </div>
+          <div class="checkup-bottom">
+            <p>Flat</p>
+            <span class="checkup-price">Rs. <p>${test.price}</p></span>
           </div>
-          <div class="checkup-right">
-            <img src="${test.icon || 'default-image-url'}" alt="${test.name}" class="checkup-image">
-          </div>
-        </div>
-        <div class="checkup-bottom">
-          <p>Flat</p><br>
-          <span class="checkup-price">Rs. <p>${test.price}</p></span>
         </div>
       `;
 
