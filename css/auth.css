@@ -81,7 +81,7 @@ body {
 button[type="submit"] {
   width: 100%;
   height: 40px;
-  background-color: #4caf50;
+  background-color: #2b97a4;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -89,7 +89,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #3e8e41;
+  background-color: #165057;
 }
 
 /* Sign Up Link Styles */
@@ -207,4 +207,27 @@ a:hover {
     padding: 10px;
     font-size: 15px;
   }
+}
+
+.home-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  background-color: #2b97a4;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.home-btn:hover {
+  background-color: #165057;
+}
+
+.home-btn i {
+  font-size: 20px;
+}
+
+.home-btn:hover i {
+  color: white;
 }
