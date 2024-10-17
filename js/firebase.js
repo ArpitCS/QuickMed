@@ -1,7 +1,7 @@
 // Import Firebase services using CDN
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-firestore.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-auth.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-auth.js";
 
 // Initialize Firebase with your config
 const firebaseConfig = {
@@ -16,5 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+auth.languageCode = 'en';
+
 
 export { app, db, auth };

@@ -79,7 +79,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-
   #regular-checks-container,
   #test-packages-container {
     flex-wrap: nowrap !important;
@@ -195,7 +194,6 @@ h2 {
     flex-wrap: nowrap !important;
     overflow: scroll;
   }
-
 }
 
 #test-package-view {
@@ -318,8 +316,14 @@ h2 {
   border: 2px solid rgba(240, 46, 170, 0.4);
   box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
   padding: 30px;
-  height: 300px;
+  /* height: 300px; */
+  width: 100%;
   border-radius: 20px;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
 
   p {
     margin: 0px !important;
@@ -337,19 +341,16 @@ h2 {
     }
 
     .book-btn {
-      align-self: flex-end;
+      align-self: flex-start;
       margin: 5px 0px !important;
-      background-color: #1a5a62;
-      color: white;
-      padding: 7px 15px;
+      color: #1a5a62;
       border-radius: 25px;
       cursor: pointer;
     }
 
     .book-btn:hover {
-      outline: 2px solid #1a5a62;
-      color: #1a5a62;
-      background-color: white;
+      color: #588e95;
+      text-decoration: underline;
     }
   }
 
@@ -358,6 +359,7 @@ h2 {
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
+    width: 100%;
   }
 
   .checkup-right {
@@ -379,6 +381,16 @@ h2 {
       align-items: center;
       justify-content: center;
       gap: 10px;
+    }
+
+    .checkup-price {
+      margin: 0px auto;
+
+      p {
+        font-size: 20px;
+        font-weight: bold;
+        transform: translateX(-10px);
+      }
     }
   }
 }
@@ -430,5 +442,23 @@ h2 {
       rgba(255, 215, 0, 0.1) 0px 20px,
       rgba(255, 215, 0, 0.05) 0px 25px;
 
+  }
+}
+
+#health-checkups-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  /* justify-content: center; */
+  /* gap: 10px; */
+  /* margin-top: 20px; */
+  /* padding: 20px; */
+}
+
+@media screen and (max-width: 768px) {
+  #health-checkups-container {
+    flex-wrap: nowrap !important;
+    overflow: scroll;
+    padding: 20px !important;
   }
 }

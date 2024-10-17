@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
       delivery_time: "1 Day",
       preparation: "12 hours fasting",
       description: "Basic Health Checkup package can be taken by anyone who wants to track the vital parameters of their body. Such health checkups can help catch the warning signs of hidden illnesses in the body. It provides a range of tests to check for your Thyroid Function, Lipid Profile, Kidney Function, Liver Function, Fasting Blood Sugar etc.",
-      icon: "https://placehold.co/40"
+      icon: "../assets/checkup-badges/basic-checkup-plan.png"
     },
     {
       id: 2,
@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
       delivery_time: "1 Day",
       preparation: "12 hours fasting",
       description: "The Regular Health Checkup is an ideal test package that covers most of the blood and urine tests needed for essential health monitoring. It covers tests for Kidney and Liver Function, Thyroid Gland, Lipid Profile, Complete Blood Count. It also checks for Sodium, Chloride and Calcium levels in the body.",
-      icon: "https://placehold.co/40"
+      icon: "../assets/checkup-badges/bronze-checkup-plan.png"
     },
     {
       id: 3,
@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
       delivery_time: "1 Day",
       preparation: "12 hours fasting",
       description: "The Comprehensive Full Body Checkup with Vitamin D & B12 is ideal for people who want to monitor their overall health. It provides a range of tests to check the health of the Heart, Thyroid, Kidney, and Liver. It also includes tests for Blood Sugar, Complete Blood Count, Lipid Profile and Complete Urine Analysis.",
-      icon: "https://placehold.co/40"
+      icon: "../assets/checkup-badges/silver-checkup-plan.png"
     },
     {
       id: 4,
@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
       delivery_time: "1 Day",
       preparation: "12 hours fasting",
       description: "Prevention is better than cure! Unhealthy lifestyle or stress can impact one's health. Health Checkup can help pick up early signs of any disease or illness. This package provides a range of tests that check important body parameters like Heart, Thyroid, Kidney, Liver, Blood Sugar, Complete Blood Count, Complete Urine Analysis.",
-      icon: "https://placehold.co/40"
+      icon: "../assets/checkup-badges/gold-checkup-plan.png"
     }
   ];
 
@@ -459,7 +459,6 @@ document.addEventListener("DOMContentLoaded", function () {
               <img src="${test.icon || 'default-image-url'}" alt="${test.name}" class="checkup-image">
             </div>
           <div class="checkup-bottom">
-            <p>Flat</p>
             <span class="checkup-price">Rs. <p>${test.price}</p></span>
           </div>
         </div>
