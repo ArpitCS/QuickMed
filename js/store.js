@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     bodyHeader.style.display = "none";
     mainContainer.innerHTML = productViewContent;
+    window.location.href = "#product";
   };
 
   const searchInput = document.getElementById("searchInput");

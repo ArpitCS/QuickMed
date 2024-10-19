@@ -52,3 +52,21 @@
     text-align: right;
     color: gray;
 }
+
+@media (max-width: 992px) {
+    #sidebar {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        height: 20vh;
+        overflow-y: scroll;
+        margin: 0;
+    }
+    #map-container {
+        margin: 0;
+    }
+    #map {
+        height: 50vh;
+    }
+
+}

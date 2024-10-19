@@ -140,6 +140,17 @@ header {
   }
 }
 
+nav {
+  padding: 7px 70px !important;
+  background-color: #e7f1f4 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-toggler {
+    margin: 0px auto;
+  }
+}
+
 #navbar {
   display: flex;
   flex-direction: row;
@@ -158,6 +169,10 @@ header {
   gap: 25px;
 }
 
+.nav-item {
+  text-align: center;
+}
+
 .nav-item a {
   text-decoration: none;
   color: black;
@@ -172,6 +187,7 @@ header {
 }
 
 #consult {
+  text-align: center;
   background-color: #155b63;
   padding: 5px 10px;
   border-radius: 20px;

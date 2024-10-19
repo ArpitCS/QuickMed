@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ).toFixed(2);
   }
 
-
   function loadCartItems() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cartItemsContainer.innerHTML = "";
@@ -86,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
 
       cartItemsContainer.innerHTML += cartItemElement;
+      
     });
   }
 
