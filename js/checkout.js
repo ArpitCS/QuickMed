@@ -63,6 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
       let cartItemElement = `
               <div class="cart-item">
                 <div class="left">
+                  <button onclick="removeFromCart('${item.id}')" class="remove-btn">
+                    <i class="fa-solid fa-close"></i>
+                  </button>
                   <img src="${item.image}" alt="" />
                 </div>
                 <div class="right">
@@ -257,6 +260,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  window.removeFromCart = function (productId) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart = cart.filter((p) => p.id !== productId);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart(cart);
+    updateCartAmount();
+    alert("Item removed from cart");
+  };
 
   loadCart();
   updateCartAmount();
