@@ -52,20 +52,23 @@ document.addEventListener("DOMContentLoaded", function () {
     ).toFixed(2);
   }
 
-  async function loadCartItems() {
+
+  function loadCartItems() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cartContainer.innerHTML = "";
+    cartItemsContainer.innerHTML = "";
 
     const cartCount = document.getElementById("cart-count");
-    cartCount.textContent = `${cart.length} Items in Cart`;
+    if (cartCount) {
+      cartCount.textContent = `${cart.length} Items in Cart`;
+    }
 
     cart.forEach((item) => {
       let cartItemElement = `
               <div class="cart-item">
+                <button onclick="removeFromCart('${item.id}')" class="remove-btn">
+                  <i class="fa-solid fa-close"></i>
+                </button>
                 <div class="left">
-                  <button onclick="removeFromCart('${item.id}')" class="remove-btn">
-                    <i class="fa-solid fa-close"></i>
-                  </button>
                   <img src="${item.image}" alt="" />
                 </div>
                 <div class="right">
@@ -73,7 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     <span>${item.name}</span>
                     <span>₹${item.price}</span>
                   </div>
-                  <div class="bottom">Qty: ${item.quantity}</div>
+                  <div class="bottom">
+                    <button class="qty-btn" onclick="increaseQty('${item.id}')">+</button>
+                    <span class="qty">${item.quantity}</span>
+                    <button class="qty-btn" onclick="decreaseQty('${item.id}')">-</button>
+                  </div>
                 </div>
               </div>
             `;
@@ -81,6 +88,34 @@ document.addEventListener("DOMContentLoaded", function () {
       cartItemsContainer.innerHTML += cartItemElement;
     });
   }
+
+  window.increaseQty = function (productId) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let itemIndex = cart.findIndex((item) => item.id === productId);
+    if (itemIndex !== -1) {
+      cart[itemIndex].quantity++;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartAmount();
+      loadCartSummary();
+      loadCartItems();
+    }
+  };
+
+  window.decreaseQty = function (productId) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let itemIndex = cart.findIndex((item) => item.id === productId);
+    if (itemIndex !== -1) {
+      if (cart[itemIndex].quantity > 1) {
+        cart[itemIndex].quantity--;
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartAmount();
+        loadCartSummary();
+        loadCartItems();
+      } else {
+        removeFromCart(productId);
+      }
+    }
+  };
 
   const cartExpandBtn = document.getElementById("cart-expand-btn");
   cartExpandBtn.addEventListener("click", function () {
@@ -265,8 +300,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart = cart.filter((p) => p.id !== productId);
     localStorage.setItem("cart", JSON.stringify(cart));
-    updateCart(cart);
+    loadCart();
     updateCartAmount();
+    loadCartSummary();
+    loadCartItems();
     alert("Item removed from cart");
   };
 

@@ -330,7 +330,12 @@ tr td:nth-child(4) {
 #cart-items {
   width: 100%;
 
-  remove-btn {
+  .remove-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background: none;
     border: none;
     cursor: pointer;
@@ -400,8 +405,24 @@ tr td:nth-child(4) {
   }
 
   .bottom {
-    font-size: 14px;
-    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    .qty-btn {
+      border: none;
+      background-color: transparent;
+
+      &:hover {
+        color: #2b97a4;
+      }
+    }
+
+    span {
+      font-size: 14px;
+      color: #999;
+    }
   }
 
   /* Responsive design */
