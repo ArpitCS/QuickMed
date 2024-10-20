@@ -41,6 +41,10 @@ body {
   width: 100%;
   margin-bottom: 20px;
 
+  .regular-icon {
+    width: 65px;
+  }
+
   p {
     margin-bottom: 0px !important;
   }
@@ -123,11 +127,6 @@ h2 {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-
-    .header-left img {
-      border: 1px solid gray;
-      border-radius: 7px;
-    }
 
     .header-right {
       display: flex;

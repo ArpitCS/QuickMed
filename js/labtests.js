@@ -132,49 +132,49 @@ document.addEventListener("DOMContentLoaded", function () {
       id: 1,
       name: "Vitamin D Test",
       price: 300,
-      icon: "https://placehold.co/40"
+      icon: "../assets/test-icons/health.png"
     },
     {
       id: 2,
       name: "Vitamin B12 Test",
       price: 250,
-      icon: "https://placehold.co/40"
+      icon: "../assets/test-icons/vitamin.png"
     },
     {
       id: 3,
       name: "Thyroid Profile Test",
       price: 500,
-      icon: "https://placehold.co/40"
+      icon: "../assets/test-icons/thyroid-gland.png"
     },
     {
       id: 4,
       name: "Liver Function Test",
       price: 400,
-      icon: "https://placehold.co/40"
+      icon: "../assets/test-icons/liver.png"
     },
     {
       id: 5,
-      name: "Kidney Function Test",
+      name: "Kidney Test",
       price: 450,
-      icon: "https://placehold.co/40"
+      icon: "../assets/test-icons/kidney.png"
     },
     {
       id: 6,
       name: "Blood Sugar Test",
       price: 200,
-      icon: "https://placehold.co/40"
+      icon: "../assets/test-icons/sugar-blood-level.png"
     },
     {
       id: 7,
-      name: "Complete Blood Count",
+      name: "Blood Cells Test",
       price: 350,
-      icon: "https://placehold.co/40"
+      icon: "../assets/test-icons/red-blood-cells.png"
     },
     {
       id: 8,
       name: "Lipid Profile Test",
       price: 600,
-      icon: "https://placehold.co/40"
+      icon: "../assets/test-icons/lipid.png"
     }
   ];
 
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
       age: "7 Years & Above",
       preparation: "12 hours fasting",
       description: "The Diabetes Care Package helps screen and diagnose prediabetes, diabetes and other types of diabetes. It provides a range of tests for key diabetes parameters such as Fasting Blood Sugar (FBS), HbA1c, and Average Blood Glucose. In addition, it also includes tests for Complete Blood Count / Hemogram (CBC), Lipid Profile, Thyroid.",
-      icon: "https://placehold.co/40"
+      icon: "../assets/package-icons/diabetes-package.png"
     },
     {
       id: 2,
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
       age: "7 Years & Above",
       preparation: "12 hours fasting",
       description: "The Heart Care Package is designed to help you monitor your heart health. It provides a range of tests to check for your Lipid Profile, Liver Function, Kidney Function, Thyroid Function, Complete Blood Count, Blood Sugar. It also includes tests for Sodium, Chloride and Calcium levels in the body.",
-      icon: "https://placehold.co/40"
+      icon: "../assets/package-icons/heart-package.png"
     },
     {
       id: 3,
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
       age: "7 Years & Above",
       preparation: "12 hours fasting",
       description: "The Kidney Care Package is designed to help you monitor your kidney health. It provides a range of tests to check for your Liver Function, Kidney Function, Thyroid Function, Complete Blood Count, Blood Sugar, Lipid Profile. It also includes tests for Sodium, Chloride and Calcium levels in the body.",
-      icon: "https://placehold.co/40"
+      icon: "../assets/package-icons/kidney-package.png"
     },
     {
       id: 4,
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
       age: "7 Years & Above",
       preparation: "12 hours fasting",
       description: "The Liver Care Package is designed to help you monitor your liver health. It provides a range of tests to check for your Kidney Function, Liver Function, Thyroid Function, Complete Blood Count, Blood Sugar, Lipid Profile. It also includes tests for Sodium, Chloride and Calcium levels in the body.",
-      icon: "https://placehold.co/40"
+      icon: "../assets/package-icons/liver-package.png"
     },
     {
       id: 5,
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
       age: "7 Years & Above",
       preparation: "12 hours fasting",
       description: "India has an estimated 40 million people formally diagnosed with thyroid disorders and hypothyroidism is the most common of thyroid disorders in India, affecting one in ten adults. This package primarily tests for key thyroid parameters like Triiodothyronine (T3) and Thyroxine (T4).",
-      icon: "https://placehold.co/40"
+      icon: "../assets/package-icons/thyroid-package.png"
     }
   ];
 
@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
       testElement.innerHTML = `
         <div class="regular-test-card">
           <div class="regular-left">
-            <img src="${test.icon}" alt="${test.name}">
+            <img src="${test.icon}" alt="${test.name}" class="regular-icon">
           </div>
           <div class="regular-right">
             <p>${test.name}</p>
@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="test-package-card">
             <div class="test-header">
             <div class="header-left">
-              <img src="${test.image}">
+              <img src="${test.icon}">
             </div>
             <div class="header-right">
               <p>${test.name}</p>
