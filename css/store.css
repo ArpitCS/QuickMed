@@ -341,3 +341,155 @@
         background-color: #5e949a;
     }
 }
+
+/* DRUG INFORMATION STYLES */
+/* Base styles */
+.drug-info-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.drug-header {
+  margin-bottom: 20px;
+}
+
+.drug-name {
+  color: #2c3e50;
+  font-size: 24px;
+  margin: 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.info-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-heading {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.info-content {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.dosage-table table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+.dosage-table table th,
+.dosage-table table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px;
+  text-align: left;
+}
+
+.dosage-table table th {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.warnings {
+  background-color: #fdf2f2;
+  border-left: 4px solid #f56565;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .drug-info-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .drug-name {
+    font-size: 20px;
+  }
+
+  .info-heading {
+    font-size: 16px;
+  }
+
+  .info-content {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drug-info-container {
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .info-grid {
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .info-card {
+    padding: 10px;
+  }
+
+  .drug-name {
+    font-size: 18px;
+  }
+
+  .info-heading {
+    font-size: 15px;
+  }
+
+  .info-content {
+    font-size: 12px;
+  }
+
+  .dosage-table table th,
+  .dosage-table table td {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+
+.warnings {
+  background-color: #fdf2f2;
+  border-left: 4px solid #f56565;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .warnings {
+    height: 150px;
+    overflow-y: scroll;
+  }
+}
+

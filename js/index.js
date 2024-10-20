@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cartAmountElement = document.getElementById("cart-amount");
 
-  function updateCartAmount() {
+  async function updateCartAmount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let totalAmount = cart.reduce((total, item) => total + item.price, 0);
     cartAmountElement.textContent = `${totalAmount}`;

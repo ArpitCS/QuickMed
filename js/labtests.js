@@ -441,6 +441,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
     testPackageView.innerHTML = content;
+    window.location.href = "#test-package-view";
   }
 
   function renderCheckupCards(tests) {

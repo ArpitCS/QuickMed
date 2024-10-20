@@ -48,11 +48,10 @@ document.addEventListener("DOMContentLoaded", async function () {
           <div class="product-body">
             <div class="product-info-left">
               <div class="product-categories">${product.categories.join(
-                ", "
-              )}</div>
-              <div class="product-title" onclick="viewProduct('${
-                product.id
-              }')">${product.name}</div>
+        ", "
+      )}</div>
+              <div class="product-title" onclick="viewProduct('${product.id
+        }')">${product.name}</div>
               <div class="product-brand">by ${product.brand}</div>
             </div>
             <div class="product-info-right">
@@ -64,9 +63,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div>
           </div>
           <div class="product-footer">
-            <button class="btn" onclick="addToCart('${
-              product.id
-            }')">+ Add to Cart</button>
+            <button class="btn" onclick="addToCart('${product.id
+        }')">+ Add to Cart</button>
           </div>
         </div>
       `;
@@ -122,7 +120,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   window.viewProduct = function (productId) {
     const product = products.find((p) => p.id === productId);
     if (!product) return;
-
+  
+    let informationContent = ''; // Declare the variable here
+  
     const productViewContent = `
       <div id="product" class="row">
         <span class="backbtn"><a href="store.html"><i class="fa-solid fa-backward"></i></a></span>
@@ -137,13 +137,84 @@ document.addEventListener("DOMContentLoaded", async function () {
           <h4>Description</h4>
           <p>${product.description}</p>
         </div>
-        <div class="col-md-4 buttons-container col-sm-12"> 
+        <div class="col-md-3 buttons-container col-sm-12"> 
           <button class="product-cart" onclick="addToCart('${productId}')">Add to Cart</button>
           <a href="cart.html" class="view-cart"><span>View Cart ></span></a>
         </div>
       </div>
     `;
-
+  
+    if (product.drug_name) {
+      const requestOptions = {
+        method: "GET",
+        redirect: "follow",
+      };
+  
+      const apiUrl = `https://api.fda.gov/drug/label.json?search=active_ingredient:${product.drug_name}&limit=1`;
+  
+      fetch(apiUrl, requestOptions)
+        .then((response) => response.text())
+        .then((result) => {
+          result = JSON.parse(result);
+          if (result.results && result.results.length > 0) {
+            const drug = result.results[0];
+            const drugName = drug.openfda?.brand_name?.[0] || product.drug_name;
+            const activeIngredient = drug.active_ingredient?.[0] || "N/A";
+            const purpose = drug.purpose?.[0] || "N/A";
+            const manufacturer = drug.openfda?.manufacturer_name?.[0] || "N/A";
+            const description = drug.description?.[0] || "No description available";
+            const warnings = drug.warnings?.[0] || "No warnings available";
+            const dosage = drug.dosage_and_administration_table?.[0] || "No dosage information available";
+            const sideEffects = drug.adverse_reactions?.[0] || "No adverse reactions listed";
+  
+            informationContent = `
+              <div class="drug-info-container">
+                <div class="info-grid">
+                  <div class="info-card">
+                    <h2 class="info-heading">Active Ingredients</h2>
+                    <p class="info-content">${activeIngredient}</p>
+                  </div>
+                  <div class="info-card">
+                    <h2 class="info-heading">Purpose</h2>
+                    <p class="info-content">${purpose}</p>
+                  </div>
+                  <div class="info-card">
+                    <h2 class="info-heading">Dosage</h2>
+                    <div class="dosage-table">${dosage}</div>
+                  </div>
+                  <div class="info-card">
+                    <h2 class="info-heading">Side Effects</h2>
+                    <p class="info-content">${sideEffects}</p>
+                  </div>
+                </div>
+                <div class="warnings">
+                  <h2 class="info-heading">Warnings</h2>
+                  <p class="info-content">${warnings}</p>
+                </div>
+              </div>
+            `;
+          } else {
+            informationContent = "<p>No information found for this drug.</p>";
+          }
+  
+          // Update the DOM after fetching the drug information
+          const productContainer = document.getElementById("product");
+          if (productContainer) {
+            productContainer.insertAdjacentHTML('beforeend', informationContent);
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching drug information:", error);
+          informationContent = "<p>Error fetching drug information.</p>";
+          
+          // Update the DOM even if there's an error
+          const productContainer = document.getElementById("product");
+          if (productContainer) {
+            productContainer.insertAdjacentHTML('beforeend', informationContent);
+          }
+        });
+    }
+  
     bodyHeader.style.display = "none";
     mainContainer.innerHTML = productViewContent;
     window.location.href = "#product";
@@ -184,7 +255,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       "Moov",
       "Aivil",
       "AVP",
-      "Micro Labs",
+      "Paracip",
     ],
     concern: [
       "General Care",
@@ -325,5 +396,5 @@ document.addEventListener("DOMContentLoaded", async function () {
       checkbox.checked = false;
     });
     loadProducts(products);
-  }; 
+  };
 });
