@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 #shipping-container {
   padding: 40px;
 }
