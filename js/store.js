@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const initialSearchQuery = getSearchQueryFromURL();
   if (initialSearchQuery) {
     searchInput.value = initialSearchQuery;
-    filterResults(initialSearchQuery); 
+    filterResults(initialSearchQuery);
   }
 
   loadProducts(products);
@@ -318,16 +318,34 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   loadFilters();
 
-  let selectedCategories = [];
-  let selectedBrands = [];
-  let selectedConcerns = [];
+  let selectedCategories = JSON.parse(localStorage.getItem("selectedCategories")) || [];
+  let selectedBrands = JSON.parse(localStorage.getItem("selectedBrands")) || [];
+  let selectedConcerns = JSON.parse(localStorage.getItem("selectedConcerns")) || [];
 
-  localStorage.setItem(
-    "selectedCategories",
-    JSON.stringify(selectedCategories)
-  );
-  localStorage.setItem("selectedBrands", JSON.stringify(selectedBrands));
-  localStorage.setItem("selectedConcerns", JSON.stringify(selectedConcerns));
+  function initializeCheckboxes() {
+    // Set category checkboxes
+    selectedCategories.forEach(category => {
+      const checkbox = document.querySelector(`input[type="checkbox"][value="${category}"]`);
+      if (checkbox) checkbox.checked = true;
+    });
+
+    // Set brand checkboxes
+    selectedBrands.forEach(brand => {
+      const checkbox = document.querySelector(`input[type="checkbox"][value="${brand}"]`);
+      if (checkbox) checkbox.checked = true;
+    });
+
+    // Set concern checkboxes
+    selectedConcerns.forEach(concern => {
+      const checkbox = document.querySelector(`input[type="checkbox"][value="${concern}"]`);
+      if (checkbox) checkbox.checked = true;
+    });
+
+    // Apply initial filters if any are saved
+    if (selectedCategories.length > 0 || selectedBrands.length > 0 || selectedConcerns.length > 0) {
+      filterProducts();
+    }
+  }
 
   window.toggleCategory = function (category) {
     const index = selectedCategories.indexOf(category);
@@ -336,10 +354,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     } else {
       selectedCategories.push(category);
     }
-    localStorage.setItem(
-      "selectedCategories",
-      JSON.stringify(selectedCategories)
-    );
+    localStorage.setItem("selectedCategories", JSON.stringify(selectedCategories));
     filterProducts();
   };
 
@@ -367,23 +382,24 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function filterProducts() {
     let filteredProducts = products;
+
+    selectedCategories = JSON.parse(localStorage.getItem("selectedCategories")) || [];
+    selectedBrands = JSON.parse(localStorage.getItem("selectedBrands")) || [];
+    selectedConcerns = JSON.parse(localStorage.getItem("selectedConcerns")) || [];
+
     if (selectedCategories.length > 0) {
-      filteredProducts = filteredProducts.filter((product) =>
-        selectedCategories.some((category) =>
-          product.categories.includes(category)
-        )
+      filteredProducts = filteredProducts.filter(product =>
+        selectedCategories.some(category => product.categories.includes(category))
       );
     }
     if (selectedBrands.length > 0) {
-      filteredProducts = filteredProducts.filter((product) =>
+      filteredProducts = filteredProducts.filter(product =>
         selectedBrands.includes(product.brand)
       );
     }
     if (selectedConcerns.length > 0) {
-      filteredProducts = filteredProducts.filter((product) =>
-        selectedConcerns.some((category) =>
-          product.categories.includes(category)
-        )
+      filteredProducts = filteredProducts.filter(product =>
+        selectedConcerns.some(concern => product.categories.includes(concern))
       );
     }
     loadProducts(filteredProducts);
