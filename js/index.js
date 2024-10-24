@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function updateCartAmount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let totalAmount = cart.reduce((total, item) => total + item.price, 0);
+    let totalAmount = cart.reduce(
+      (total, item) => total + item.quantity * item.price,
+      0
+    );
     cartAmountElement.textContent = `${totalAmount}`;
   }
 
