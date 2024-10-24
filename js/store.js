@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const productsContainer = document.getElementById("productCards");
   const cartAmountElement = document.getElementById("cart-amount");
 
-  function updateCartAmount() {
+  async function updateCartAmount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let totalAmount = cart.reduce(
       (total, item) => total + item.quantity * item.price,
@@ -120,9 +120,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   window.viewProduct = function (productId) {
     const product = products.find((p) => p.id === productId);
     if (!product) return;
-  
+
     let informationContent = ''; // Declare the variable here
-  
+
     const productViewContent = `
       <div id="product" class="row">
         <span class="backbtn"><a href="store.html"><i class="fa-solid fa-backward"></i></a></span>
@@ -143,15 +143,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         </div>
       </div>
     `;
-  
+
     if (product.drug_name) {
       const requestOptions = {
         method: "GET",
         redirect: "follow",
       };
-  
+
       const apiUrl = `https://api.fda.gov/drug/label.json?search=active_ingredient:${product.drug_name}&limit=1`;
-  
+
       fetch(apiUrl, requestOptions)
         .then((response) => response.text())
         .then((result) => {
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const warnings = drug.warnings?.[0] || "No warnings available";
             const dosage = drug.dosage_and_administration_table?.[0] || "No dosage information available";
             const sideEffects = drug.adverse_reactions?.[0] || "No adverse reactions listed";
-  
+
             informationContent = `
               <div class="drug-info-container">
                 <div class="info-grid">
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           } else {
             informationContent = "<p>No information found for this drug.</p>";
           }
-  
+
           // Update the DOM after fetching the drug information
           const productContainer = document.getElementById("product");
           if (productContainer) {
@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         .catch((error) => {
           console.error("Error fetching drug information:", error);
           informationContent = "<p>Error fetching drug information.</p>";
-          
+
           // Update the DOM even if there's an error
           const productContainer = document.getElementById("product");
           if (productContainer) {
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           }
         });
     }
-  
+
     bodyHeader.style.display = "none";
     mainContainer.innerHTML = productViewContent;
     window.location.href = "#product";
@@ -226,6 +226,17 @@ document.addEventListener("DOMContentLoaded", async function () {
     searchInput.value = query;
     filterResults(query);
   });
+
+  function getSearchQueryFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('q') || '';
+  }
+
+  const initialSearchQuery = getSearchQueryFromURL();
+  if (initialSearchQuery) {
+    searchInput.value = initialSearchQuery;
+    filterResults(initialSearchQuery); 
+  }
 
   loadProducts(products);
   updateCartAmount();

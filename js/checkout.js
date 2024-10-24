@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const discountRate = 0.05; // 5%
   let totalAmount = 0;
 
-  function updateCartAmount() {
+  async function updateCartAmount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     totalAmount = cart.reduce(
       (total, item) => total + item.price * item.quantity,

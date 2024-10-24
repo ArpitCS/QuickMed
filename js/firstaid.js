@@ -103,6 +103,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ]
 
+    async function updateCartAmount() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let totalAmount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+        cartAmountElement.textContent = `₹${totalAmount.toFixed(2)}`;
+    }
+
+    updateCartAmount();
+
     let firstaid = document.getElementById('firstaidcards');
 
     function displayProcedures() {
@@ -115,11 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="procedure hidden">
                     <div class="card-header">Procedure</div>
                     <div class="card-steps">
-                        <ul>`;  
-                        item.steps.forEach((step) => {
-                            output += `<li>${step}</li>`;
-                        });
-                output += `
+                        <ul>`;
+            item.steps.forEach((step) => {
+                output += `<li>${step}</li>`;
+            });
+            output += `
                         </ul>
                     </div>
                 </div>

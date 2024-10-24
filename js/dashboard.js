@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      userInfoElement.textContent = `Welcome, ${user.email}`;
+      userInfoElement.textContent = user.email;
     } else {
       window.location.href = '../html/login.html';
     }

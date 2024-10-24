@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const taxRate = 0.18; // 18%
   const discountRate = 0.05; // 5%
 
-  function updateCartAmount() {
+  async function updateCartAmount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let totalAmount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
     cartAmountElement.textContent = `₹${totalAmount.toFixed(2)}`;

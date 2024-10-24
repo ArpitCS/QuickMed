@@ -1,0 +1,116 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+  }
+  
+  .header {
+    background-color: #ffffff;
+    color: #333;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .header .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .header .nav-link {
+    color: #333;
+    font-weight: 500;
+  }
+
+  .header .nav-link:hover {
+    color: #2b97a4;
+  }
+  
+  .nav-link.active {
+    color: #2b97a4;
+  }
+  
+  .logout-button {
+    background-color: #2b97a4;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 500;
+  }
+  
+  .dashboard-section {
+    margin-top: 30px;
+  }
+  
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    border: none;
+    margin-bottom: 30px;
+  }
+  
+  .card-header {
+    background-color: #ffffff;
+    color: #333;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 1.25rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .card-body {
+    padding: 25px;
+  }
+  
+  .btn-reorder {
+    background-color: #2b97a4;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-weight: 500;
+  }
+  
+  .data-block {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border: none;
+  }
+  
+  .data-block h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+  }
+  
+  .data-block p {
+    font-size: 1.5rem;
+    color: #2b97a4;
+    font-weight: 500;
+  }
+  
+  .chart-container {
+    width: calc(100% - 30px);
+    height: 100px;
+    margin-top: 20px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .list-group-item {
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    padding: 15px;
+  }
+  
