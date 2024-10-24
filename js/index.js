@@ -25,12 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeButton = document.getElementById("closeBtn");
 
   closeButton.addEventListener("click", function () {
-    consultModal.toggle();
-  });
-
-  const consultButton2 = document.getElementById("consultBtn2");
-  consultButton2.addEventListener("click", function () {
-    consultModal.toggle();
+    consultModal.hide();
+    const backdrop = document.querySelector('.modal-backdrop');
+    if (backdrop) {
+      backdrop.remove();
+    }
   });
 
   const searchValue = document.getElementById("searchInput");

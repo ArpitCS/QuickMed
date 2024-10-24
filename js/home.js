@@ -1,9 +1,9 @@
 // Firebase Imports
 import { app, db, auth } from "./firebase.js";// Suggested code may be subject to a license. Learn more: ~LicenseLog:2683724769.
 import {
-  getFirestore,
-  collection,
-  getDocs,
+    getFirestore,
+    collection,
+    getDocs,
 } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -61,6 +61,23 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
 
         })
-
     }
+
+    const consultButton2 = document.getElementById("consultBtn2");
+    const consultModalElement = document.querySelector("#consultModalContainer .modal");
+    const consultModal = new bootstrap.Modal(consultModalElement);
+
+    consultButton2.addEventListener("click", function () {
+        consultModal.show();
+    });
+
+    const closeButton = document.getElementById("closeBtn");
+
+    closeButton.addEventListener("click", function () {
+        consultModal.hide();
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+            backdrop.remove();
+        }
+    });
 });
