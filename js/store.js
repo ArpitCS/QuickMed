@@ -387,6 +387,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     selectedBrands = JSON.parse(localStorage.getItem("selectedBrands")) || [];
     selectedConcerns = JSON.parse(localStorage.getItem("selectedConcerns")) || [];
 
+    console.log(selectedBrands);
+    console.log(selectedCategories);
+    console.log(selectedConcerns);
+
     if (selectedCategories.length > 0) {
       filteredProducts = filteredProducts.filter(product =>
         selectedCategories.some(category => product.categories.includes(category))
