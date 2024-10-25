@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const cardTemplate = `
             <div class="product-card col-lg-3 col-12" height="100%">
               <div class="product-image">
-                <img src="${product.image}" />
+                <img src="${product.image}" alt="${product.name}"/>
               </div>
               <div class="product-body">
                 <div class="product-info-left">
