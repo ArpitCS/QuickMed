@@ -39,13 +39,13 @@
       </div>
       <div id="right-header">
         <div id="cart">
-          <a href="html/cart.html">
+          <a href="html/cart.html" class="d-flex align-items-center">
             <i class="fa-solid fa-cart-shopping"></i>
+            <div id="amount">
+              <i class="fa-solid fa-rupee-sign">:</i>
+              <div id="cart-amount">XX,XXX</div>
+            </div>
           </a>
-          <div id="amount">
-            <i class="fa-solid fa-rupee-sign">:</i>
-            <div id="cart-amount">XX,XXX</div>
-          </div>
         </div>
         <div id="profile">
           <a href="html/login.html">
@@ -123,6 +123,7 @@
           <h4>Order Using Prescription</h4>
           <p>Files Supported: .jpg, .png, .pdf</p>
           <p>Size Limit is 15MB</p>
+          <label for="fileID"></label>
           <input type="file" accept=".jpg, .png,.pdf" id="fileID" />
         </div>
         <div>
@@ -206,44 +207,44 @@
       <h2>Browse by Health Concerns</h2>
       <div class="itemCards" id="concerns-container">
         <div class="itemCard" value="Diabetes" filter-type="concerns">
-          <a href="#"><img src="assets/concerns/diabetes.jpg" alt="" /></a>
+          <img src="assets/concerns/diabetes.jpg" alt="" />
           <p>Diabetes</p>
         </div>
         <div class="itemCard" value="Heart Care" filter-type="concerns">
-          <a href="#"><img src="assets/concerns/heartcare.jpg" alt="" /></a>
+          <img src="assets/concerns/heartcare.jpg" alt="" />
           <p>Heart Care</p>
         </div>
         <div class="itemCard" value="Joints Care" filter-type="concerns">
-          <a href="#"><img src="assets/concerns/bones.jpeg" alt="" /></a>
+          <img src="assets/concerns/bones.jpeg" alt="" />
           <p>Bone, Joint & Muscle Care</p>
         </div>
         <div class="itemCard" value="Kidney Care" filter-type="concerns">
-          <a href="#"><img src="assets/concerns/kidney.jpg" alt="" /></a>
+          <img src="assets/concerns/kidney.jpg" alt="" />
           <p>Kidney Care</p>
         </div>
         <div class="itemCard" value="Skin Care" filter-type="concerns">
-          <a href="#"><img src="assets/concerns/derma.jpg" alt="" /></a>
+          <img src="assets/concerns/derma.jpg" alt="" />
           <p>Derma Care</p>
         </div>
       </div>
     </div>
     <div id="brand">
-      <h2>Browse by Brands</h2>
+      <h2>Browse by Brands</h2> 
       <div class="itemCards" id="brands-container">
         <div class="itemCard" value="Himalaya" filter-type="brand">
-          <a href="#"><img src="assets/brands/himalaya.webp" alt="" /></a>
+          <img src="assets/brands/himalaya.webp" alt="" />
         </div>
         <div class="itemCard" value="Aimil" filter-type="brand">
-          <a href="#"><img src="assets/brands/aimil.webp" alt="" /></a>
+          <img src="assets/brands/aimil.webp" alt="" />
         </div>
         <div class="itemCard" value="AVP" filter-type="brand">
-          <a href="#"><img src="assets/brands/avp.webp" alt="" /></a>
+          <img src="assets/brands/avp.webp" alt="" />
         </div>
         <div class="itemCard" value="Dabur" filter-type="brand">
-          <a href="#"><img src="assets/brands/dabur.webp" alt="" /></a>
+          <img src="assets/brands/dabur.webp" alt="" />
         </div>
         <div class="itemCard" value="Dr. Morepen" filter-type="brand">
-          <a href="#"><img src="assets/brands/morepen.webp" alt="" /></a>
+          <img src="assets/brands/morepen.webp" alt="" />
         </div>
       </div>
     </div>
