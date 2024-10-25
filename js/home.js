@@ -90,14 +90,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       if (filterType == "concerns") {
         // Updated from "category" to "concerns"
-        let selectedCategories =
-          JSON.parse(localStorage.getItem("selectedCategories")) || [];
-        if (!selectedCategories.includes(value)) {
+        let selectedConcerns =
+          JSON.parse(localStorage.getItem("selectedConcerns")) || [];
+        if (!selectedConcerns.includes(value)) {
           // Prevent duplicates
-          selectedCategories.push(value);
+          selectedConcerns.push(value);
           localStorage.setItem(
-            "selectedCategories",
-            JSON.stringify(selectedCategories)
+            "selectedConcerns",
+            JSON.stringify(selectedConcerns)
           );
           window.location.href = "/html/store.html";
         }

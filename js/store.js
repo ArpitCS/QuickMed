@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     updateFilterCheckboxes();
   }
 
-  function updateFilterCheckboxes() {
+  async function updateFilterCheckboxes() {
     const filters = getSelectedFilters();
 
     document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
