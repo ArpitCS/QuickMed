@@ -90,8 +90,9 @@
     </nav>
   </header>
 
-  <div id="firstaidcards">
-
+  <div class="container py-5">
+    <h1 class="text-center mb-5">First Aid Guide</h1>
+    <div id="firstaidcards" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
   </div>
 
   <div id="newsletter">
@@ -180,6 +181,33 @@
           <div class="modal-footer">
             <button type="button" id="bookBtn" class="btn">Book Appointment</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="procedureModal" tabindex="-1" aria-labelledby="procedureModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="procedureModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="procedureCarousel" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#procedureCarousel"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#procedureCarousel"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div id="stepDescription" class="step-description"></div>
         </div>
       </div>
     </div>

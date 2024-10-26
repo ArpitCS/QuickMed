@@ -30,7 +30,7 @@
   #body-header {
     gap: 10px;
     padding: 20px;
-  } 
+  }
 }
 
 #expand-btn {
@@ -59,6 +59,7 @@
 
   ul {
     list-style-type: none;
+
     li {
       margin: 10px 0;
       font-size: 1rem;
@@ -197,6 +198,7 @@
     color: #666666;
     margin: 10px 0;
   }
+
   .card-description:hover {
     text-decoration: underline;
     cursor: pointer;
@@ -233,6 +235,17 @@
     scale: 1.05;
     transition: all 0.05s;
   }
+}
+
+.product-image:hover {
+  img {
+    transform: scale(1.025);
+    transition-duration: 0.2s;
+  }
+}
+
+.product-title:hover {
+  text-decoration: underline;
 }
 
 /* PRODUCT PAGE */
@@ -310,36 +323,38 @@
 }
 
 .filter {
-  input:hover + label {
+  input:hover+label {
     cursor: pointer;
     background-color: #e5e5e5;
   }
 
-  input + label {
+  input+label {
     padding: 5px 10px;
     border-radius: 25px;
   }
+
   input {
     display: none;
   }
-  input:checked + label {
+
+  input:checked+label {
     background-color: #70da70;
     color: white;
   }
 }
 
 #clear-filters {
-    background-color: #165057;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 20px 0;
-    
-    &:hover {
-        background-color: #5e949a;
-    }
+  background-color: #165057;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 0;
+
+  &:hover {
+    background-color: #5e949a;
+  }
 }
 
 /* DRUG INFORMATION STYLES */
@@ -492,4 +507,3 @@
     overflow-y: scroll;
   }
 }
-
