@@ -47,11 +47,10 @@ document.addEventListener("DOMContentLoaded", async function () {
           <div class="product-body">
             <div class="product-info-left">
               <div class="product-categories">${product.categories.join(
-                ", "
-              )}</div>
-              <div class="product-title" onclick="viewProduct('${
-                product.id
-              }')">${product.name}</div>
+        ", "
+      )}</div>
+              <div class="product-title" onclick="viewProduct('${product.id
+        }')">${product.name}</div>
               <div class="product-brand">by ${product.brand}</div>
             </div>
             <div class="product-info-right">
@@ -63,9 +62,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div>
           </div>
           <div class="product-footer">
-            <button class="btn" onclick="addToCart('${
-              product.id
-            }')">+ Add to Cart</button>
+            <button class="btn" onclick="addToCart('${product.id
+        }')">+ Add to Cart</button>
           </div>
         </div>
       `;
@@ -490,6 +488,51 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
     loadProducts(products);
   };
+
+  const sortSelect = document.getElementById("sort");
+  sortSelect.addEventListener("change", function () {
+    applyFiltersAndSort();
+  });
+
+  function applyFiltersAndSort() {
+    const filters = getSelectedFilters();
+    let filteredProducts = products;
+
+    if (filters.categories.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        filters.categories.some((category) =>
+          product.categories.includes(category)
+        )
+      );
+    }
+
+    if (filters.brands.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        filters.brands.includes(product.brand)
+      );
+    }
+
+    if (filters.concerns.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        filters.concerns.some((concern) => product.categories.includes(concern))
+      );
+    }
+
+    const sortBy = sortSelect.value;
+    if (sortBy === "price") {
+      filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (sortBy === "rating") {
+      filteredProducts.sort((a, b) => b.rating - a.rating);
+    }
+
+    loadProducts(filteredProducts);
+    updateFilterCheckboxes();
+  }
+
+  function applyFilters() {
+    applyFiltersAndSort();
+  }
+
 
   loadProducts(products);
   updateCartAmount();
