@@ -343,7 +343,7 @@
   }
 }
 
-#clear-filters {
+/* #clear-filters {
   background-color: #165057;
   color: white;
   padding: 10px 20px;
@@ -355,6 +355,68 @@
   &:hover {
     background-color: #5e949a;
   }
+} */
+
+#clear-filters {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #e62222;
+}
+
+#clear-filters,
+#clear-filters span {
+  transition: 200ms;
+}
+
+#clear-filters .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+}
+
+#clear-filters .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#clear-filters svg {
+  width: 15px;
+  fill: #eee;
+}
+
+#clear-filters:hover {
+  background: #ff3636;
+}
+
+#clear-filters:hover .text {
+  color: transparent;
+}
+
+#clear-filters:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+}
+
+#clear-filters:focus {
+  outline: none;
+}
+
+#clear-filters:active .icon svg {
+  transform: scale(0.8);
 }
 
 /* DRUG INFORMATION STYLES */
