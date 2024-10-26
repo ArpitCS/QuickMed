@@ -493,12 +493,12 @@ nav {
     }
   }
 
-  .product-image:hover {
+  /* .product-image:hover {
     img {
       transform: scale(1.025);
       transition-duration: 0.2s;
     }
-  }
+  } */
 
   .product-info-left,
   .product-info-right {
@@ -528,9 +528,9 @@ nav {
     cursor: pointer;
   }
 
-  .product-title:hover {
+  /* .product-title:hover {
     text-decoration: underline;
-  }
+  } */
 
   .product-brand {
     font-weight: 600;

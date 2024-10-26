@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", async function () {
               <div class="product-body">
                 <div class="product-info-left">
                   <div class="product-categories">${product.categories.join(
-                    ", "
-                  )}</div>
+        ", "
+      )}</div>
                   <div class="product-title">${product.name}.</div>
                   <div class="product-brand">by ${product.brand}</div>
                 </div>
@@ -50,9 +50,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 </div>
               </div>
               <div class="product-footer">
-                <button class="btn" onclick="addToCart('${
-                  product.id
-                }')">+ Add to Cart</button>
+                <button class="btn" onclick="addToCart('${product.id
+        }')">+ Add to Cart</button>
               </div>
             </div>
             `;
@@ -62,6 +61,37 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     });
   }
+
+  async function updateCartAmount() {
+    const cartAmountElement = document.getElementById("cart-amount");
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let totalAmount = cart.reduce(
+      (total, item) => total + item.quantity * item.price,
+      0
+    );
+    cartAmountElement.textContent = `${totalAmount}`;
+  }
+
+  window.addToCart = function (productId) {
+    const product = popularProducts.find((p) => p.id === productId);
+    if (!product) return;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProductIndex = cart.findIndex(
+      (item) => item.id === productId
+    );
+
+    if (existingProductIndex !== -1) {
+      cart[existingProductIndex].quantity += 1;
+    } else {
+      cart.push({ ...product, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartAmount();
+    alert(`${product.name} added to cart`);
+  };
 
   const consultButton2 = document.getElementById("consultBtn2");
   const consultModalElement = document.querySelector(
