@@ -343,20 +343,6 @@
   }
 }
 
-/* #clear-filters {
-  background-color: #165057;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 20px 0;
-
-  &:hover {
-    background-color: #5e949a;
-  }
-} */
-
 #clear-filters {
   width: 150px;
   height: 50px;
