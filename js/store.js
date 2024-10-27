@@ -24,6 +24,28 @@ document.addEventListener("DOMContentLoaded", async function () {
   const expandBtn = document.getElementById("expand-btn");
   const expandIcon = document.getElementById("expand-icon");
 
+  // Product Filters
+  let filters = {
+    category: ["Medicines", "Supplements", "Personal Care", "Health Devices"],
+    brand: ["Eagle", "Dr. Morepen", "Dabur", "Liveasy", "Himalaya", "Moov", "Aivil", "AVP", "Paracip"],
+    concern: ["General Care", "Skin Care", "Diabetes", "Heart Care", "Joints Care", "Kidney Care", "Derma Care"],
+  };
+
+  // Filter Set & Get Functions
+  function getSelectedFilters() {
+    return {
+      categories: JSON.parse(localStorage.getItem("selectedCategories")) || [],
+      brands: JSON.parse(localStorage.getItem("selectedBrands")) || [],
+      concerns: JSON.parse(localStorage.getItem("selectedConcerns")) || [],
+    };
+  }
+
+  function setSelectedFilters(filters) {
+    localStorage.setItem("selectedCategories", JSON.stringify(filters.categories));
+    localStorage.setItem("selectedBrands", JSON.stringify(filters.brands));
+    localStorage.setItem("selectedConcerns", JSON.stringify(filters.concerns));
+  }
+
   window.fetchProducts = async function () {
     try {
       const querySnapshot = await getDocs(collection(db, "Products"));
@@ -81,23 +103,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       `;
     });
     productsContainer.innerHTML = htmlContent;
-  }
-
-  function getSelectedFilters() {
-    return {
-      categories: JSON.parse(localStorage.getItem("selectedCategories")) || [],
-      brands: JSON.parse(localStorage.getItem("selectedBrands")) || [],
-      concerns: JSON.parse(localStorage.getItem("selectedConcerns")) || [],
-    };
-  }
-
-  function setSelectedFilters(filters) {
-    localStorage.setItem(
-      "selectedCategories",
-      JSON.stringify(filters.categories)
-    );
-    localStorage.setItem("selectedBrands", JSON.stringify(filters.brands));
-    localStorage.setItem("selectedConcerns", JSON.stringify(filters.concerns));
   }
 
   function applyFilters() {
@@ -336,30 +341,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     expandBtn.classList.toggle("expanded");
     expandIcon.classList.toggle("fa-down-long");
     expandIcon.classList.toggle("fa-up-long");
-  };
-
-  let filters = {
-    category: ["Medicines", "Supplements", "Personal Care", "Health Devices"],
-    brand: [
-      "Eagle",
-      "Dr. Morepen",
-      "Dabur",
-      "Liveasy",
-      "Himalaya",
-      "Moov",
-      "Aivil",
-      "AVP",
-      "Paracip",
-    ],
-    concern: [
-      "General Care",
-      "Skin Care",
-      "Diabetes",
-      "Heart Care",
-      "Joints Care",
-      "Kidney Care",
-      "Derma Care",
-    ],
   };
 
   function loadFilters() {
