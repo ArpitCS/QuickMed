@@ -62,15 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
       price: 799,
       total: 40,
       tests: [
-        "Fasting Blood Sugar (FBS)", "HbA1c", "Average Blood Glucose", "Complete Blood Count (CBC)", 
-        "Lipid Profile - Total Cholesterol", "Lipid Profile - HDL", "Lipid Profile - LDL", 
+        "Fasting Blood Sugar (FBS)", "HbA1c", "Average Blood Glucose", "Complete Blood Count (CBC)",
+        "Lipid Profile - Total Cholesterol", "Lipid Profile - HDL", "Lipid Profile - LDL",
         "Lipid Profile - Triglycerides", "Thyroid Stimulating Hormone (TSH)", "Insulin Levels",
-        "C-Peptide", "Glucose Tolerance Test", "Creatinine", "Urea", "Sodium", "Potassium", 
-        "Calcium", "Magnesium", "Phosphate", "Vitamin D", "Vitamin B12", "Iron Studies", 
-        "Ferritin", "Transferrin", "Liver Function Test (ALT/SGPT)", "Liver Function Test (AST/SGOT)", 
-        "Albumin", "Bilirubin", "Alkaline Phosphatase", "Gamma-GT", "Uric Acid", 
-        "C-Reactive Protein (CRP)", "Erythrocyte Sedimentation Rate (ESR)", "Hemoglobin A1c", 
-        "Glycemic Index", "Cortisol", "Renal Function - BUN", "Renal Function - Creatinine Clearance", 
+        "C-Peptide", "Glucose Tolerance Test", "Creatinine", "Urea", "Sodium", "Potassium",
+        "Calcium", "Magnesium", "Phosphate", "Vitamin D", "Vitamin B12", "Iron Studies",
+        "Ferritin", "Transferrin", "Liver Function Test (ALT/SGPT)", "Liver Function Test (AST/SGOT)",
+        "Albumin", "Bilirubin", "Alkaline Phosphatase", "Gamma-GT", "Uric Acid",
+        "C-Reactive Protein (CRP)", "Erythrocyte Sedimentation Rate (ESR)", "Hemoglobin A1c",
+        "Glycemic Index", "Cortisol", "Renal Function - BUN", "Renal Function - Creatinine Clearance",
         "Microalbumin", "Proinsulin", "Homocysteine"
       ],
       sample_type: "Blood",
@@ -88,18 +88,18 @@ document.addEventListener("DOMContentLoaded", function () {
       price: 999,
       total: 50,
       tests: [
-        "Lipid Profile - Total Cholesterol", "Lipid Profile - HDL", "Lipid Profile - LDL", 
-        "Lipid Profile - Triglycerides", "Apolipoprotein A1", "Apolipoprotein B", 
-        "Lipoprotein (a)", "C-Reactive Protein (CRP)", "Homocysteine", "Troponin I", 
+        "Lipid Profile - Total Cholesterol", "Lipid Profile - HDL", "Lipid Profile - LDL",
+        "Lipid Profile - Triglycerides", "Apolipoprotein A1", "Apolipoprotein B",
+        "Lipoprotein (a)", "C-Reactive Protein (CRP)", "Homocysteine", "Troponin I",
         "Troponin T", "Pro-BNP", "Complete Blood Count (CBC)", "Hemoglobin", "Hematocrit",
-        "Platelet Count", "White Blood Cell Count", "Red Blood Cell Count", 
-        "Electrolytes - Sodium", "Electrolytes - Potassium", "Electrolytes - Chloride", 
-        "Calcium", "Magnesium", "Phosphate", "Vitamin D", "Vitamin B12", "Thyroid Stimulating Hormone (TSH)", 
-        "Free T3", "Free T4", "Glucose Tolerance Test", "HbA1c", "Liver Function Test (ALT/SGPT)", 
-        "Liver Function Test (AST/SGOT)", "Bilirubin", "Albumin", "Alkaline Phosphatase", 
-        "Kidney Function Test - Creatinine", "Kidney Function Test - Urea", 
-        "Glomerular Filtration Rate (GFR)", "Uric Acid", "Microalbumin", 
-        "Renal Function - BUN", "Renal Function - Creatinine Clearance", "High Sensitivity CRP", 
+        "Platelet Count", "White Blood Cell Count", "Red Blood Cell Count",
+        "Electrolytes - Sodium", "Electrolytes - Potassium", "Electrolytes - Chloride",
+        "Calcium", "Magnesium", "Phosphate", "Vitamin D", "Vitamin B12", "Thyroid Stimulating Hormone (TSH)",
+        "Free T3", "Free T4", "Glucose Tolerance Test", "HbA1c", "Liver Function Test (ALT/SGPT)",
+        "Liver Function Test (AST/SGOT)", "Bilirubin", "Albumin", "Alkaline Phosphatase",
+        "Kidney Function Test - Creatinine", "Kidney Function Test - Urea",
+        "Glomerular Filtration Rate (GFR)", "Uric Acid", "Microalbumin",
+        "Renal Function - BUN", "Renal Function - Creatinine Clearance", "High Sensitivity CRP",
         "D-dimer", "Fibrinogen", "Prothrombin Time (PT)", "INR", "Vitamin K"
       ],
       sample_type: "Blood",
@@ -117,21 +117,21 @@ document.addEventListener("DOMContentLoaded", function () {
       price: 899,
       total: 48,
       tests: [
-        "Kidney Function Test - Creatinine", "Kidney Function Test - Urea", 
-        "Glomerular Filtration Rate (GFR)", "Uric Acid", "Electrolytes - Sodium", 
-        "Electrolytes - Potassium", "Electrolytes - Chloride", "Calcium", 
-        "Phosphate", "Magnesium", "Vitamin D", "Renal Function - BUN", 
-        "Renal Function - Creatinine Clearance", "Microalbumin", 
-        "Protein/Creatinine Ratio", "Urine Routine Examination", "Complete Blood Count (CBC)", 
-        "Hemoglobin", "Hematocrit", "Platelet Count", "White Blood Cell Count", 
-        "Red Blood Cell Count", "Liver Function Test (ALT/SGPT)", 
-        "Liver Function Test (AST/SGOT)", "Bilirubin", "Albumin", "Alkaline Phosphatase", 
-        "Gamma-GT", "Thyroid Stimulating Hormone (TSH)", "Free T3", "Free T4", 
-        "Vitamin B12", "C-Reactive Protein (CRP)", "Erythrocyte Sedimentation Rate (ESR)", 
-        "Fasting Blood Sugar (FBS)", "HbA1c", "Average Blood Glucose", 
-        "Lipid Profile - Total Cholesterol", "Lipid Profile - HDL", 
-        "Lipid Profile - LDL", "Lipid Profile - Triglycerides", "Insulin Levels", 
-        "Parathyroid Hormone (PTH)", "Serum Osmolality", "Urine Osmolality", 
+        "Kidney Function Test - Creatinine", "Kidney Function Test - Urea",
+        "Glomerular Filtration Rate (GFR)", "Uric Acid", "Electrolytes - Sodium",
+        "Electrolytes - Potassium", "Electrolytes - Chloride", "Calcium",
+        "Phosphate", "Magnesium", "Vitamin D", "Renal Function - BUN",
+        "Renal Function - Creatinine Clearance", "Microalbumin",
+        "Protein/Creatinine Ratio", "Urine Routine Examination", "Complete Blood Count (CBC)",
+        "Hemoglobin", "Hematocrit", "Platelet Count", "White Blood Cell Count",
+        "Red Blood Cell Count", "Liver Function Test (ALT/SGPT)",
+        "Liver Function Test (AST/SGOT)", "Bilirubin", "Albumin", "Alkaline Phosphatase",
+        "Gamma-GT", "Thyroid Stimulating Hormone (TSH)", "Free T3", "Free T4",
+        "Vitamin B12", "C-Reactive Protein (CRP)", "Erythrocyte Sedimentation Rate (ESR)",
+        "Fasting Blood Sugar (FBS)", "HbA1c", "Average Blood Glucose",
+        "Lipid Profile - Total Cholesterol", "Lipid Profile - HDL",
+        "Lipid Profile - LDL", "Lipid Profile - Triglycerides", "Insulin Levels",
+        "Parathyroid Hormone (PTH)", "Serum Osmolality", "Urine Osmolality",
         "Cystatin C", "Beta-2 Microglobulin", "Vitamin C"
       ],
       sample_type: "Blood",
@@ -149,20 +149,20 @@ document.addEventListener("DOMContentLoaded", function () {
       price: 899,
       total: 48,
       tests: [
-        "Liver Function Test (ALT/SGPT)", "Liver Function Test (AST/SGOT)", 
-        "Bilirubin - Total", "Bilirubin - Direct", "Bilirubin - Indirect", 
-        "Alkaline Phosphatase", "Gamma-GT", "Albumin", "Total Protein", 
-        "Prothrombin Time (PT)", "INR", "Thyroid Stimulating Hormone (TSH)", 
-        "Free T3", "Free T4", "Vitamin B12", "C-Reactive Protein (CRP)", 
-        "Complete Blood Count (CBC)", "Hemoglobin", "Hematocrit", 
-        "Platelet Count", "White Blood Cell Count", "Red Blood Cell Count", 
-        "Urea", "Creatinine", "Glomerular Filtration Rate (GFR)", "Calcium", 
-        "Phosphate", "Magnesium", "Vitamin D", "Lipid Profile - Total Cholesterol", 
-        "Lipid Profile - HDL", "Lipid Profile - LDL", "Lipid Profile - Triglycerides", 
-        "Blood Sugar - Fasting", "Blood Sugar - Postprandial", 
-        "HbA1c", "Iron Studies", "Ferritin", "Transferrin", 
-        "Electrolytes - Sodium", "Electrolytes - Potassium", "Electrolytes - Chloride", 
-        "Lactate Dehydrogenase (LDH)", "Alpha-fetoprotein (AFP)", "Ammonia", 
+        "Liver Function Test (ALT/SGPT)", "Liver Function Test (AST/SGOT)",
+        "Bilirubin - Total", "Bilirubin - Direct", "Bilirubin - Indirect",
+        "Alkaline Phosphatase", "Gamma-GT", "Albumin", "Total Protein",
+        "Prothrombin Time (PT)", "INR", "Thyroid Stimulating Hormone (TSH)",
+        "Free T3", "Free T4", "Vitamin B12", "C-Reactive Protein (CRP)",
+        "Complete Blood Count (CBC)", "Hemoglobin", "Hematocrit",
+        "Platelet Count", "White Blood Cell Count", "Red Blood Cell Count",
+        "Urea", "Creatinine", "Glomerular Filtration Rate (GFR)", "Calcium",
+        "Phosphate", "Magnesium", "Vitamin D", "Lipid Profile - Total Cholesterol",
+        "Lipid Profile - HDL", "Lipid Profile - LDL", "Lipid Profile - Triglycerides",
+        "Blood Sugar - Fasting", "Blood Sugar - Postprandial",
+        "HbA1c", "Iron Studies", "Ferritin", "Transferrin",
+        "Electrolytes - Sodium", "Electrolytes - Potassium", "Electrolytes - Chloride",
+        "Lactate Dehydrogenase (LDH)", "Alpha-fetoprotein (AFP)", "Ammonia",
         "Serum Amylase", "Lipase", "Uric Acid", "Parathyroid Hormone (PTH)"
       ],
       sample_type: "Blood",
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
       icon: "../assets/package-icons/liver-package.png"
     }
   ];
-  
+
 
   const healthCheckups = [
     {
@@ -232,24 +232,78 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
+  let selectedTests = new Set();
+  let totalPrice = 0;
+
+  function updateTotalPrice() {
+    totalPrice = Array.from(selectedTests).reduce((sum, testId) => {
+      const test = regularTests.find(t => t.id === testId);
+      return sum + test.price;
+    }, 0);
+
+    const orderSummary = document.getElementById("order-summary");
+    if (selectedTests.size > 0) {
+      orderSummary.style.display = "block";
+      orderSummary.querySelector(".selected-count").textContent = selectedTests.size;
+      orderSummary.querySelector(".total-price").textContent = `₹${totalPrice}`;
+    } else {
+      orderSummary.style.display = "none";
+    }
+  }
+
+  function toggleTestSelection(testId) {
+    if (selectedTests.has(testId)) {
+      selectedTests.delete(testId);
+      document.querySelector(`[data-id="${testId}"]`).classList.remove("selected");
+    } else {
+      selectedTests.add(testId);
+      document.querySelector(`[data-id="${testId}"]`).classList.add("selected");
+    }
+    updateTotalPrice();
+  }
+
   function renderRegularCards(tests) {
+    // Add container for order summary
+    const orderSummaryHtml = `
+      <div id="order-summary" style="display: none;" class="order-summary">
+        <div class="summary-content">
+          <div>
+            <span><span class="selected-count">0</span> tests selected</span>
+            <span>Total: <span class="total-price">0</span></span>
+          </div>
+          <button onclick="window.location.href='checkout.html'" class="checkout-button">Book Selected Tests</button>
+        </div>
+      </div>
+    `;
+    regularTestsContainer.insertAdjacentHTML('beforeend', orderSummaryHtml);
+
+    // Create tests grid
+    const testsGrid = document.createElement("div");
+    testsGrid.className = "tests-grid row";
+
     tests.forEach((test) => {
       const testElement = document.createElement("div");
       testElement.className = "testCard col-md-3 col-sm-12";
       testElement.innerHTML = `
-        <div class="regular-test-card">
+        <div class="regular-test-card" data-id="${test.id}">
           <div class="regular-left">
             <img src="${test.icon}" alt="${test.name}" class="regular-icon">
           </div>
           <div class="regular-right">
             <p>${test.name}</p>
             <p>₹ ${test.price}</p>
-            <button class="book-button" data-id="${test.id}">Book Now</button>
+            <div class="select-indicator">✓</div>
           </div>
         </div>
       `;
-      regularTestsContainer.appendChild(testElement);
+      testsGrid.appendChild(testElement);
+
+      testElement.querySelector('.regular-test-card').addEventListener('click', () => {
+        toggleTestSelection(test.id);
+      });
     });
+
+    regularTestsContainer.insertBefore(testsGrid, regularTestsContainer.querySelector('#order-summary'));
   }
 
 
@@ -282,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
       testElement.addEventListener("click", () => viewTestPackage(test));
     });
   }
-  
+
   function viewTestPackage(test) {
     const mainContainer = document.getElementById("main-container");
     const testPackageView = document.getElementById("test-package-view");
@@ -389,6 +443,7 @@ document.addEventListener("DOMContentLoaded", function () {
       healtCheckupsContainer.appendChild(checkupElement);
     })
   }
+
 
   renderRegularCards(regularTests);
   renderTestPackageCards(testPackages);
