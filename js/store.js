@@ -8,9 +8,21 @@ import {
 
 document.addEventListener("DOMContentLoaded", async function () {
   let products = [];
+  let selectedCategories = JSON.parse(localStorage.getItem("selectedCategories")) || [];
+  let selectedBrands = JSON.parse(localStorage.getItem("selectedBrands")) || [];
+  let selectedConcerns = JSON.parse(localStorage.getItem("selectedConcerns")) || [];
 
+  // Get DOM elements
   const productsContainer = document.getElementById("productCards");
   const cartAmountElement = document.getElementById("cart-amount");
+  const sortSelect = document.getElementById("sort");
+  const searchInput = document.getElementById("searchInput");
+  const categoriesList = document.getElementById("categories-list");
+  const brandsList = document.getElementById("brands-list");
+  const concernList = document.getElementById("concern-list");
+  const clearFilterBtn = document.getElementById("clear-filters");
+  const expandBtn = document.getElementById("expand-btn");
+  const expandIcon = document.getElementById("expand-icon");
 
   window.fetchProducts = async function () {
     try {
@@ -289,7 +301,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     window.location.href = "#product";
   };
 
-  const searchInput = document.getElementById("searchInput");
   searchInput.addEventListener("input", function () {
     const query = searchInput.value;
     searchInput.value = query;
@@ -319,8 +330,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     updateCartAmount();
   }
 
-  const expandBtn = document.getElementById("expand-btn");
-  const expandIcon = document.getElementById("expand-icon");
   expandBtn.onclick = function () {
     const sidebar = document.getElementById("sidebar");
     sidebar.classList.toggle("show");
@@ -328,10 +337,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     expandIcon.classList.toggle("fa-down-long");
     expandIcon.classList.toggle("fa-up-long");
   };
-
-  const categoriesList = document.getElementById("categories-list");
-  const brandsList = document.getElementById("brands-list");
-  const concernList = document.getElementById("concern-list");
 
   let filters = {
     category: ["Medicines", "Supplements", "Personal Care", "Health Devices"],
@@ -395,12 +400,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   loadFilters();
-
-  let selectedCategories =
-    JSON.parse(localStorage.getItem("selectedCategories")) || [];
-  let selectedBrands = JSON.parse(localStorage.getItem("selectedBrands")) || [];
-  let selectedConcerns =
-    JSON.parse(localStorage.getItem("selectedConcerns")) || [];
 
   function initializeCheckboxes() {
     filters.category.forEach((category) => {
@@ -471,7 +470,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     applyFilters();
   };
 
-  const clearFilterBtn = document.getElementById("clear-filters");
   clearFilterBtn.onclick = function () {
     selectedCategories = [];
     selectedBrands = [];
@@ -489,7 +487,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     loadProducts(products);
   };
 
-  const sortSelect = document.getElementById("sort");
   sortSelect.addEventListener("change", function () {
     applyFiltersAndSort();
   });
