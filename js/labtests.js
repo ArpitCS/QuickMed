@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
     testPackageView.innerHTML = content;
-    window.location.href = "#test-package-view";
+    window.location.href = "#header";
   }
 
   function renderCheckupCards(tests) {
