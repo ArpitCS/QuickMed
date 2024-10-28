@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   // Product Filters
   let filters = {
     category: ["Medicines", "Supplements", "Personal Care", "Health Devices"],
-    brand: ["Eagle", "Dr. Morepen", "Dabur", "Liveasy", "Himalaya", "Moov", "Aivil", "AVP", "Paracip"],
-    concern: ["General Care", "Skin Care", "Diabetes", "Heart Care", "Joints Care", "Kidney Care", "Derma Care"],
+    brand: ["Eagle", "Dr. Morepen", "Dabur", "Liveasy", "Himalaya", "Moov", "AVP", "Paracip"],
+    concern: ["General Care", "Skin Care", "Diabetes", "Heart Care", "Joints Care", "Kidney Care"],
   };
 
   // Filter Set & Get Functions
